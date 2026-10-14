@@ -67,9 +67,15 @@ export const CreatorCornerSection: React.FC<CreatorCornerSectionProps> = ({
           {/* Right Column: Visual editorial feature card */}
           <div className="lg:col-span-7">
             {featured && (
-              <div
-                onClick={() => onSelectArticle(featured.slug || featured.id)}
-                className="group relative bg-[#FAF7F2] border border-[#DDCFC5] p-6 sm:p-8 cursor-pointer transition-all hover:shadow-lg hover:border-[#BA7D70]"
+              <a
+                href={`/article/${featured.slug}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onSelectArticle(featured.slug || featured.id);
+                  }
+                }}
+                className="group relative block bg-[#FAF7F2] border border-[#DDCFC5] p-6 sm:p-8 cursor-pointer transition-all hover:shadow-lg hover:border-[#BA7D70] text-left no-underline"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
                   <div className="sm:col-span-6 aspect-[4/3] overflow-hidden border border-[#EAE3D9]">
@@ -110,7 +116,7 @@ export const CreatorCornerSection: React.FC<CreatorCornerSectionProps> = ({
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             )}
           </div>
         </div>

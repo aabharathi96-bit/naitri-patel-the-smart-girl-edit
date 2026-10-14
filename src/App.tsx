@@ -32,7 +32,7 @@ export default function App() {
   // Helper to resolve an article by slug, id, canonicalSlug, or aliasSlugs
   const resolveArticle = (input: string) => {
     const raw = input.trim().replace(/^#\/?/, '').replace(/^\/+/, '');
-    const clean = raw.replace(/^(beauty|style|money|digital|life|article)\//i, '');
+    const clean = raw.replace(/^(beauty|style|money|digital|life|article|blog)\//i, '');
     return ARTICLES.find(
       (a) =>
         a.slug === clean ||
@@ -46,12 +46,23 @@ export default function App() {
     );
   };
 
-  // Sync hash routing and update SEO metadata
-  useEffect(() => {
-    const handleHashChange = () => {
-      const rawHash = window.location.hash.replace(/^#\/?/, '').trim();
+  // Helper to extract the active route path from either window.location.pathname or window.location.hash
+  const getActiveRoute = () => {
+    const pathname = window.location.pathname.replace(/^\/+/, '').trim();
+    const hash = window.location.hash.replace(/^#\/?/, '').trim();
 
-      if (!rawHash || rawHash === '') {
+    if (pathname && pathname !== 'index.html') {
+      return pathname;
+    }
+    return hash;
+  };
+
+  // Sync routing from browser address bar (supports pathname & hash) and update SEO metadata
+  useEffect(() => {
+    const handleLocationChange = () => {
+      const route = getActiveRoute();
+
+      if (!route || route === '' || route === 'home') {
         setViewMode('home');
         setSelectedCategory(null);
         setSelectedArticleId(null);
@@ -63,9 +74,12 @@ export default function App() {
           ogType: 'website',
           structuredData: getHomeStructuredData(),
         });
-      } else if (rawHash.startsWith('category/')) {
-        const cat = rawHash.split('/')[1] as Category;
-        if (['Beauty', 'Style', 'Money', 'Digital', 'Life'].includes(cat)) {
+      } else if (route.startsWith('category/')) {
+        const catPart = route.split('/')[1];
+        const cat = (['Beauty', 'Style', 'Money', 'Digital', 'Life'] as Category[]).find(
+          (c) => c.toLowerCase() === catPart?.toLowerCase()
+        );
+        if (cat) {
           setViewMode('category');
           setSelectedCategory(cat);
           setSelectedArticleId(null);
@@ -87,7 +101,7 @@ export default function App() {
             }),
           });
         }
-      } else if (rawHash === 'creator-corner') {
+      } else if (route === 'creator-corner') {
         setViewMode('creator-corner');
         setSelectedCategory(null);
         setSelectedArticleId(null);
@@ -106,8 +120,8 @@ export default function App() {
           }),
         });
       } else {
-        // Check if it's an article (e.g. article/slug or beauty/slug or directly slug)
-        const matched = resolveArticle(rawHash);
+        // Resolve article (supports /article/:slug, /blog/:slug, or direct :slug)
+        const matched = resolveArticle(route);
         if (matched) {
           setViewMode('article');
           setSelectedArticleId(matched.id);
@@ -135,17 +149,28 @@ export default function App() {
               category: matched.category,
             }),
           });
+        } else {
+          // Unrecognized route fallback to homepage
+          setViewMode('home');
+          setSelectedCategory(null);
+          setSelectedArticleId(null);
         }
       }
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    handleLocationChange();
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
   }, []);
 
   const navigateHome = () => {
-    window.location.hash = '';
+    if (window.location.pathname !== '/' || window.location.hash !== '') {
+      window.history.pushState(null, '', '/');
+    }
     setViewMode('home');
     setSelectedCategory(null);
     setSelectedArticleId(null);
@@ -161,7 +186,10 @@ export default function App() {
   };
 
   const navigateCategory = (category: Category) => {
-    window.location.hash = `category/${category}`;
+    const newPath = `/category/${category}`;
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
     setViewMode('category');
     setSelectedCategory(category);
     setSelectedArticleId(null);
@@ -173,13 +201,13 @@ export default function App() {
     updateSEO({
       title,
       description,
-      canonicalPath: `/category/${category}`,
+      canonicalPath: newPath,
       ogType: 'website',
       image: meta?.coverImage,
       structuredData: getCategoryStructuredData({
         categoryName: category,
         categoryDescription: description,
-        url: `https://thesmartgirledit.com/category/${category}`,
+        url: `https://thesmartgirledit.com${newPath}`,
       }),
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -188,18 +216,20 @@ export default function App() {
   const navigateArticle = (slugOrId: string) => {
     const art = resolveArticle(slugOrId);
     const targetSlug = art ? art.slug : slugOrId;
-    window.location.hash = `article/${targetSlug}`;
+    const newPath = `/article/${targetSlug}`;
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
     setViewMode('article');
     setSelectedArticleId(art ? art.id : slugOrId);
     if (art) {
       setSelectedCategory(art.category);
       const title = art.seo?.metaTitle || `${art.title} — The Smart Girl Edit`;
       const description = art.seo?.metaDescription || art.dek;
-      const canonicalPath = `/article/${art.slug}`;
       updateSEO({
         title,
         description,
-        canonicalPath,
+        canonicalPath: newPath,
         ogType: 'article',
         image: art.heroImage,
         imageAlt: art.heroImageAlt,
@@ -208,7 +238,7 @@ export default function App() {
         structuredData: getArticleStructuredData({
           title: art.title,
           description,
-          url: `https://thesmartgirledit.com${canonicalPath}`,
+          url: `https://thesmartgirledit.com${newPath}`,
           image: `https://thesmartgirledit.com${art.heroImage}`,
           datePublished: art.publicationDate,
           authorName: art.author?.name,
@@ -221,7 +251,10 @@ export default function App() {
   };
 
   const navigateCreatorCorner = () => {
-    window.location.hash = 'creator-corner';
+    const newPath = '/creator-corner';
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
     setViewMode('creator-corner');
     setSelectedCategory(null);
     setSelectedArticleId(null);
@@ -231,12 +264,12 @@ export default function App() {
     updateSEO({
       title,
       description,
-      canonicalPath: '/creator-corner',
+      canonicalPath: newPath,
       ogType: 'website',
       structuredData: getCategoryStructuredData({
         categoryName: 'Creator Corner',
         categoryDescription: description,
-        url: 'https://thesmartgirledit.com/creator-corner',
+        url: `https://thesmartgirledit.com${newPath}`,
       }),
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -321,10 +354,16 @@ export default function App() {
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {creatorArticles.map((article) => (
-                    <div
+                    <a
                       key={article.id}
-                      onClick={() => navigateArticle(article.slug || article.id)}
-                      className="group bg-[#FAF7F2] border border-[#EAE3D9] p-6 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all cursor-pointer"
+                      href={`/article/${article.slug}`}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          navigateArticle(article.slug || article.id);
+                        }
+                      }}
+                      className="group block bg-[#FAF7F2] border border-[#EAE3D9] p-6 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all cursor-pointer text-left no-underline"
                     >
                       <div>
                         <div className="aspect-[16/10] overflow-hidden mb-4 border border-[#EAE3D9] bg-[#F4EFEA]">
@@ -357,7 +396,7 @@ export default function App() {
                         <span>Read Investigation</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>

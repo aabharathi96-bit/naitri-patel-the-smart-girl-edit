@@ -130,13 +130,17 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           {filteredArticles.length > 0 ? (
             <div className="space-y-4">
               {filteredArticles.map((article) => (
-                <div
+                <a
                   key={article.id}
-                  onClick={() => {
-                    onSelectArticle(article.slug || article.id);
-                    onClose();
+                  href={`/article/${article.slug}`}
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      onSelectArticle(article.slug || article.id);
+                      onClose();
+                    }
                   }}
-                  className="group flex gap-4 sm:gap-6 p-2 rounded-sm hover:bg-[#F4EFEA] transition-all cursor-pointer items-start"
+                  className="group flex gap-4 sm:gap-6 p-2 rounded-sm hover:bg-[#F4EFEA] transition-all cursor-pointer items-start text-left no-underline"
                 >
                   <div className="w-20 h-20 sm:w-28 sm:h-24 shrink-0 overflow-hidden rounded-xs border border-[#EAE3D9]">
                     <SmartImage
@@ -162,7 +166,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   <div className="hidden sm:flex items-center text-[#8C7A70] group-hover:text-[#2A211D] self-center">
                     <ArrowRight className="w-4 h-4" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           ) : (

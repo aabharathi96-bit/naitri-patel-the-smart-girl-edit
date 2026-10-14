@@ -185,9 +185,15 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Grid Layout: 1 Large Featured Article + 2 Smaller Supporting Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* ONE LARGE FEATURED ARTICLE (7 Columns) */}
-            <div
-              onClick={() => onSelectArticle(leadLatestArticle.slug || leadLatestArticle.id)}
-              className="lg:col-span-7 group cursor-pointer bg-[#FAF7F2] border border-[#DDCFC5] p-5 sm:p-7 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all"
+            <a
+              href={`/article/${leadLatestArticle.slug}`}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onSelectArticle(leadLatestArticle.slug || leadLatestArticle.id);
+                }
+              }}
+              className="lg:col-span-7 group block cursor-pointer bg-[#FAF7F2] border border-[#DDCFC5] p-5 sm:p-7 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all text-left no-underline"
             >
               <div>
                 <div className="aspect-[16/10] overflow-hidden mb-5 border border-[#EAE3D9] bg-[#F2ECE5]">
@@ -225,15 +231,21 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* TWO SMALLER SUPPORTING ARTICLES (5 Columns) */}
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6 lg:space-y-0">
               {supportingLatestArticles.map((story) => (
-                <div
+                <a
                   key={story.id}
-                  onClick={() => onSelectArticle(story.slug || story.id)}
-                  className="group cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-5 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all"
+                  href={`/article/${story.slug}`}
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      onSelectArticle(story.slug || story.id);
+                    }
+                  }}
+                  className="group block cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-5 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all text-left no-underline"
                 >
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start">
                     <div className="w-full sm:w-36 aspect-[4/3] sm:aspect-square shrink-0 overflow-hidden border border-[#EAE3D9] bg-[#F2ECE5]">
@@ -267,7 +279,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       Read <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -447,10 +459,16 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {trendingArticles.map((story) => (
-              <div
+              <a
                 key={story.id}
-                onClick={() => onSelectArticle(story.slug || story.id)}
-                className="group cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-5 flex flex-col justify-between hover:border-[#BA7D70] transition-all"
+                href={`/article/${story.slug}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onSelectArticle(story.slug || story.id);
+                  }
+                }}
+                className="group block cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-5 flex flex-col justify-between hover:border-[#BA7D70] transition-all text-left no-underline"
               >
                 <div>
                   <div className="aspect-[4/3] overflow-hidden border border-[#EAE3D9] bg-[#F2ECE5] mb-4">
@@ -478,7 +496,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <span>Read Story</span>
                   <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

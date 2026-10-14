@@ -21,12 +21,18 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand Col */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
-              <button
-                onClick={onNavigateHome}
-                className="text-left font-serif text-2xl sm:text-3xl font-semibold tracking-[-0.01em] text-[#FAF7F2] hover:text-[#E4B7AD] transition-colors cursor-pointer"
+              <a
+                href="/"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onNavigateHome();
+                  }
+                }}
+                className="text-left font-serif text-2xl sm:text-3xl font-semibold tracking-[-0.01em] text-[#FAF7F2] hover:text-[#E4B7AD] transition-colors cursor-pointer block no-underline"
               >
                 THE SMART GIRL EDIT
-              </button>
+              </a>
               <p className="font-serif italic text-base sm:text-lg text-[#EAE3D9]/80 mt-2">
                 Make smarter choices. Live your life.
               </p>
@@ -57,12 +63,18 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2.5">
               {CATEGORIES.map((cat) => (
                 <li key={cat}>
-                  <button
-                    onClick={() => onNavigateCategory(cat)}
-                    className="text-sm font-sans text-[#EAE3D9]/80 hover:text-[#FAF7F2] hover:translate-x-1 transition-all cursor-pointer flex items-center gap-2"
+                  <a
+                    href={`/category/${cat}`}
+                    onClick={(e) => {
+                      if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                        e.preventDefault();
+                        onNavigateCategory(cat);
+                      }
+                    }}
+                    className="text-sm font-sans text-[#EAE3D9]/80 hover:text-[#FAF7F2] hover:translate-x-1 transition-all cursor-pointer flex items-center gap-2 no-underline"
                   >
                     <span>{cat}</span>
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>

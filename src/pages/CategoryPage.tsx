@@ -93,9 +93,15 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
               </span>
             </div>
 
-            <div
-              onClick={() => onSelectArticle(featured.slug || featured.id)}
-              className="group cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#FAF7F2] border border-[#DDCFC5] p-6 sm:p-10 hover:border-[#BA7D70] transition-all"
+            <a
+              href={`/article/${featured.slug}`}
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onSelectArticle(featured.slug || featured.id);
+                }
+              }}
+              className="group block cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#FAF7F2] border border-[#DDCFC5] p-6 sm:p-10 hover:border-[#BA7D70] transition-all text-left no-underline"
             >
               <div className="lg:col-span-7 aspect-[16/10] overflow-hidden border border-[#EAE3D9] bg-[#F4EFEA]">
                 <SmartImage
@@ -131,7 +137,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
                   <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </section>
       )}
@@ -150,10 +156,16 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryArticles.map((article) => (
-              <div
+              <a
                 key={article.id}
-                onClick={() => onSelectArticle(article.slug || article.id)}
-                className="group bg-[#FAF7F2] border border-[#EAE3D9] p-5 flex flex-col justify-between hover:border-[#BA7D70] transition-all cursor-pointer"
+                href={`/article/${article.slug}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onSelectArticle(article.slug || article.id);
+                  }
+                }}
+                className="group block bg-[#FAF7F2] border border-[#EAE3D9] p-5 flex flex-col justify-between hover:border-[#BA7D70] transition-all cursor-pointer text-left no-underline"
               >
                 <div>
                   <div className="aspect-[16/10] overflow-hidden mb-4 border border-[#EAE3D9] bg-[#F4EFEA]">
@@ -185,7 +197,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
                     Read <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

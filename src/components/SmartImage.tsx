@@ -18,7 +18,6 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   const [currentSrc, setCurrentSrc] = useState(src || '');
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [retryAttempted, setRetryAttempted] = useState(false);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   // Sync currentSrc when src prop changes
@@ -26,7 +25,6 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     setCurrentSrc(src || '');
     setHasError(false);
     setIsLoaded(false);
-    setRetryAttempted(false);
   }, [src]);
 
   // Check if image is already loaded from cache or fast network
@@ -37,21 +35,16 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   }, [currentSrc]);
 
   const handleError = () => {
-    if (!retryAttempted && currentSrc) {
-      setRetryAttempted(true);
-      // Alternate between /assets/images and /src/assets/images to guarantee fallback resolution
-      if (currentSrc.includes('/src/assets/images/')) {
-        setCurrentSrc(currentSrc.replace('/src/assets/images/', '/assets/images/'));
-        return;
-      } else if (currentSrc.includes('/assets/images/')) {
-        setCurrentSrc(currentSrc.replace('/assets/images/', '/src/assets/images/'));
-        return;
-      }
+    // If the image fails, fall back to our primary editorial lifestyle photograph
+    const editorialFallback = '/assets/images/smart_girl_hero_cover_1791477860935.jpg';
+    if (currentSrc !== editorialFallback) {
+      setCurrentSrc(editorialFallback);
+    } else {
+      setHasError(true);
     }
-    setHasError(true);
   };
 
-  if (!currentSrc || hasError) {
+  if (hasError) {
     return (
       <div
         className={`relative flex flex-col items-center justify-center overflow-hidden bg-[#F4EFEA] text-[#66564D] p-6 text-center ${className}`}
@@ -72,7 +65,7 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   return (
     <div className={`relative overflow-hidden bg-[#F4EFEA] ${className}`}>
       {!isLoaded && (
-        <div className="absolute inset-0 bg-[#EAE3D9]/40 animate-pulse pointer-events-none" />
+        <div className="absolute inset-0 bg-[#EAE3D9]/30 animate-pulse pointer-events-none" />
       )}
       <img
         ref={imgRef}
@@ -84,7 +77,7 @@ export const SmartImage: React.FC<SmartImageProps> = ({
         onError={handleError}
         style={{ imageRendering: 'auto' }}
         className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
+          isLoaded ? 'opacity-100' : 'opacity-90'
         }`}
         {...props}
       />

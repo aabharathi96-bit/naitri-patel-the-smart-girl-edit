@@ -22,9 +22,15 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
   if (variant === 'featured') {
     return (
-      <article
-        onClick={handleClick}
-        className={`group cursor-pointer bg-[#FAF7F2] border border-[#DDCFC5] p-5 sm:p-7 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all rounded-none ${className}`}
+      <a
+        href={`/article/${article.slug}`}
+        onClick={(e) => {
+          if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+            e.preventDefault();
+            handleClick();
+          }
+        }}
+        className={`group block cursor-pointer bg-[#FAF7F2] border border-[#DDCFC5] p-5 sm:p-7 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all rounded-none text-left no-underline ${className}`}
       >
         <div>
           <div className="aspect-[16/10] overflow-hidden mb-5 border border-[#EAE3D9] bg-[#F2ECE5]">
@@ -68,15 +74,21 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
           </div>
         </div>
-      </article>
+      </a>
     );
   }
 
   if (variant === 'horizontal') {
     return (
-      <article
-        onClick={handleClick}
-        className={`group cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-4 sm:p-5 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all rounded-none ${className}`}
+      <a
+        href={`/article/${article.slug}`}
+        onClick={(e) => {
+          if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+            e.preventDefault();
+            handleClick();
+          }
+        }}
+        className={`group block cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-4 sm:p-5 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all rounded-none text-left no-underline ${className}`}
       >
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start">
           <div className="w-full sm:w-36 aspect-[4/3] sm:aspect-square shrink-0 overflow-hidden border border-[#EAE3D9] bg-[#F2ECE5]">
@@ -111,15 +123,21 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             <ArrowRight className="w-3 h-3 ml-0.5" />
           </span>
         </div>
-      </article>
+      </a>
     );
   }
 
   if (variant === 'compact') {
     return (
-      <article
-        onClick={handleClick}
-        className={`group cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-4 flex flex-col justify-between hover:border-[#BA7D70] transition-all rounded-none ${className}`}
+      <a
+        href={`/article/${article.slug}`}
+        onClick={(e) => {
+          if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+            e.preventDefault();
+            handleClick();
+          }
+        }}
+        className={`group block cursor-pointer bg-[#FAF7F2] border border-[#EAE3D9] p-4 flex flex-col justify-between hover:border-[#BA7D70] transition-all rounded-none text-left no-underline ${className}`}
       >
         <div>
           <div className="aspect-[16/10] overflow-hidden mb-3 border border-[#EAE3D9] bg-[#F4EFEA]">
@@ -147,15 +165,21 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           <span>READ ARTICLE</span>
           <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
         </div>
-      </article>
+      </a>
     );
   }
 
   // Standard card
   return (
-    <article
-      onClick={handleClick}
-      className={`group bg-[#FAF7F2] border border-[#EAE3D9] p-5 sm:p-6 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all cursor-pointer rounded-none ${className}`}
+    <a
+      href={`/article/${article.slug}`}
+      onClick={(e) => {
+        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      className={`group block bg-[#FAF7F2] border border-[#EAE3D9] p-5 sm:p-6 flex flex-col justify-between hover:border-[#BA7D70] hover:shadow-sm transition-all cursor-pointer rounded-none text-left no-underline ${className}`}
     >
       <div>
         <div className="aspect-[16/10] overflow-hidden mb-4 border border-[#EAE3D9] bg-[#F4EFEA]">
@@ -190,6 +214,6 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </article>
+    </a>
   );
 };

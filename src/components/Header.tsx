@@ -34,12 +34,16 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Top Bar: Exactly 3 Zones */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
         {/* Zone 1: Brand title, single line wordmark */}
-        <button
-          onClick={() => {
-            onNavigateHome();
-            setMobileMenuOpen(false);
+        <a
+          href="/"
+          onClick={(e) => {
+            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+              e.preventDefault();
+              onNavigateHome();
+              setMobileMenuOpen(false);
+            }
           }}
-          className="text-left group flex flex-col justify-center cursor-pointer focus-visible:outline-none"
+          className="text-left group flex flex-col justify-center cursor-pointer focus-visible:outline-none no-underline"
         >
           <span className="font-serif text-2xl sm:text-3xl lg:text-3xl font-semibold tracking-[-0.02em] text-[#2A211D] group-hover:text-[#BA7D70] transition-colors whitespace-nowrap">
             THE SMART GIRL EDIT
@@ -47,17 +51,23 @@ export const Header: React.FC<HeaderProps> = ({
           <span className="text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8C7A70] -mt-1 hidden sm:block">
             Everyday Discernment
           </span>
-        </button>
+        </a>
 
         {/* Zone 2: 5 clean category nav links */}
         <nav className="hidden md:flex items-center space-x-7 lg:space-x-9">
           {CATEGORIES.map((cat) => {
             const isActive = currentCategory === cat;
             return (
-              <button
+              <a
                 key={cat}
-                onClick={() => onNavigateCategory(cat)}
-                className={`text-sm lg:text-[15px] font-medium tracking-wide transition-colors relative py-1 cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+                href={`/category/${cat}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onNavigateCategory(cat);
+                  }
+                }}
+                className={`text-sm lg:text-[15px] font-medium tracking-wide transition-colors relative py-1 cursor-pointer whitespace-nowrap flex items-center gap-1.5 no-underline ${
                   isActive ? 'text-[#2A211D]' : 'text-[#66564D] hover:text-[#2A211D]'
                 }`}
               >
@@ -68,16 +78,22 @@ export const Header: React.FC<HeaderProps> = ({
                 {isActive && (
                   <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#BA7D70] rounded-full" />
                 )}
-              </button>
+              </a>
             );
           })}
-          <button
-            onClick={onNavigateCreatorCorner}
-            className="text-xs uppercase tracking-widest text-[#BA7D70] hover:text-[#2A211D] transition-colors font-medium flex items-center gap-1 cursor-pointer whitespace-nowrap pl-2 border-l border-[#EAE3D9]"
+          <a
+            href="/creator-corner"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigateCreatorCorner();
+              }
+            }}
+            className="text-xs uppercase tracking-widest text-[#BA7D70] hover:text-[#2A211D] transition-colors font-medium flex items-center gap-1 cursor-pointer whitespace-nowrap pl-2 border-l border-[#EAE3D9] no-underline"
           >
             Creator Corner
             <ArrowUpRight className="w-3 h-3" />
-          </button>
+          </a>
         </nav>
 
         {/* Zone 3: Search button + Mobile Menu Toggle */}
@@ -109,13 +125,17 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div className="flex flex-col space-y-3">
             {CATEGORIES.map((cat) => (
-              <button
+              <a
                 key={cat}
-                onClick={() => {
-                  onNavigateCategory(cat);
-                  setMobileMenuOpen(false);
+                href={`/category/${cat}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onNavigateCategory(cat);
+                    setMobileMenuOpen(false);
+                  }
                 }}
-                className={`text-left text-lg font-serif py-1 flex items-center justify-between cursor-pointer ${
+                className={`text-left text-lg font-serif py-1 flex items-center justify-between cursor-pointer no-underline ${
                   currentCategory === cat ? 'text-[#BA7D70] font-medium' : 'text-[#2A211D]'
                 }`}
               >
@@ -124,18 +144,22 @@ export const Header: React.FC<HeaderProps> = ({
                   <span>{cat}</span>
                 </span>
                 <span className="text-xs font-sans text-[#8C7A70] tracking-wider uppercase">Explore</span>
-              </button>
+              </a>
             ))}
-            <button
-              onClick={() => {
-                onNavigateCreatorCorner();
-                setMobileMenuOpen(false);
+            <a
+              href="/creator-corner"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigateCreatorCorner();
+                  setMobileMenuOpen(false);
+                }
               }}
-              className="text-left text-base font-serif py-2 text-[#BA7D70] flex items-center justify-between border-t border-[#EAE3D9]/60 pt-3 cursor-pointer"
+              className="text-left text-base font-serif py-2 text-[#BA7D70] flex items-center justify-between border-t border-[#EAE3D9]/60 pt-3 cursor-pointer no-underline"
             >
               <span>Creator Corner</span>
               <ArrowUpRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
       )}

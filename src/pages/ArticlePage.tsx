@@ -96,10 +96,11 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
         ];
 
   const handleShare = () => {
+    const fullUrl = `${window.location.origin}/article/${article.slug}`;
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(fullUrl);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setTimeout(() => setCopied(false), 2500);
     }
   };
 
@@ -129,15 +130,17 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
       const targetSlug = rawTarget
         .replace(/^#\/?/, '')
         .replace(/^\/+/, '')
-        .replace(/^(beauty|style|money|digital|life|article)\//i, '');
+        .replace(/^(beauty|style|money|digital|life|article|blog)\//i, '');
 
       elements.push(
         <a
           key={match.index}
-          href={`#/article/${targetSlug}`}
+          href={`/article/${targetSlug}`}
           onClick={(e) => {
-            e.preventDefault();
-            onSelectArticle(targetSlug);
+            if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+              e.preventDefault();
+              onSelectArticle(targetSlug);
+            }
           }}
           className="text-[#BA7D70] font-medium underline underline-offset-3 hover:text-[#2A211D] transition-colors cursor-pointer inline text-left"
         >
@@ -155,31 +158,51 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   return (
     <article className="bg-[#FAF7F2] min-h-screen pb-24">
       {/* 1. TOP BREADCRUMB & METADATA BAR */}
-      <div className="pt-8 pb-4 border-b border-[#EAE3D9] bg-[#FAF7F2]">
+      <div className="pt-6 pb-4 border-b border-[#EAE3D9] bg-[#F7F2EA]/80 sticky top-18 sm:top-20 z-30 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between text-xs text-[#8C7A70]">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-[#8C7A70]">
+            <div className="flex items-center gap-2.5">
               <button
                 onClick={onNavigateHome}
-                className="hover:text-[#2A211D] cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF7F2] border border-[#DDCFC5] hover:border-[#BA7D70] text-[#2A211D] font-medium rounded-xs text-[11px] uppercase tracking-wider transition-colors cursor-pointer"
               >
-                The Edit
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>All Articles</span>
               </button>
-              <span>/</span>
-              <button
-                onClick={() => onNavigateCategory(article.category)}
-                className="font-medium text-[#BA7D70] hover:underline cursor-pointer uppercase tracking-wider font-mono"
-              >
-                {article.category}
-              </button>
-              {article.subcategory && (
-                <>
-                  <span>/</span>
-                  <span className="hidden sm:inline font-sans text-[#66564D]">
-                    {article.subcategory}
-                  </span>
-                </>
-              )}
+
+              <span className="text-[#DDCFC5] hidden sm:inline">/</span>
+
+              <div className="hidden sm:flex items-center gap-1.5 text-xs">
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateHome();
+                  }}
+                  className="hover:text-[#2A211D] transition-colors"
+                >
+                  Home
+                </a>
+                <span>/</span>
+                <a
+                  href={`/category/${article.category}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateCategory(article.category);
+                  }}
+                  className="font-medium text-[#BA7D70] hover:underline uppercase tracking-wider font-mono"
+                >
+                  {article.category}
+                </a>
+                {article.subcategory && (
+                  <>
+                    <span>/</span>
+                    <span className="font-sans text-[#66564D] truncate max-w-[150px]">
+                      {article.subcategory}
+                    </span>
+                  </>
+                )}
+              </div>
             </div>
 
             <div className="flex items-center gap-3">
@@ -197,12 +220,12 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
               </button>
               <button
                 onClick={handleShare}
-                className="p-1.5 rounded hover:bg-[#F2ECE5] transition-colors cursor-pointer flex items-center gap-1 text-[#8C7A70]"
+                className="p-1.5 rounded hover:bg-[#F2ECE5] transition-colors cursor-pointer flex items-center gap-1 text-[#8C7A70] relative"
                 aria-label="Share story"
               >
                 <Share2 className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline text-[11px] uppercase tracking-wider">
-                  {copied ? 'Link Copied' : 'Share'}
+                <span className="text-[11px] uppercase tracking-wider font-medium text-[#2A211D]">
+                  {copied ? '✓ Link Copied!' : 'Share'}
                 </span>
               </button>
             </div>

@@ -182,10 +182,16 @@ export const MoodFilterSection: React.FC<MoodFilterSectionProps> = ({
           {/* Grid of matched articles */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {matchedArticles.slice(0, 3).map((article) => (
-              <div
+              <a
                 key={article.id}
-                onClick={() => onSelectArticle(article.slug || article.id)}
-                className="group flex flex-col cursor-pointer"
+                href={`/article/${article.slug}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onSelectArticle(article.slug || article.id);
+                  }
+                }}
+                className="group flex flex-col cursor-pointer text-left no-underline"
               >
                 <div className="aspect-[16/10] overflow-hidden mb-3.5 border border-[#EAE3D9] bg-[#F2ECE5]">
                   <SmartImage
@@ -210,7 +216,7 @@ export const MoodFilterSection: React.FC<MoodFilterSectionProps> = ({
                   <span>Read article</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
