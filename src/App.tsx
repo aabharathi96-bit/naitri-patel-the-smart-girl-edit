@@ -68,9 +68,9 @@ export default function App() {
         setSelectedCategory(null);
         setSelectedArticleId(null);
         updateSEO({
-          title: 'The Smart Girl Edit — Be Smarter About the Things You Love',
+          title: 'Blog About Lifestyle — The Smart Girl Edit',
           description:
-            'A modern editorial lifestyle publication for women in their 20s covering beauty, personal style, money management, digital life, and smarter everyday choices.',
+            'The Smart Girl Edit is an editorial blog about lifestyle for modern women, covering skincare routines, capsule wardrobes, budgeting apps, and mindful living.',
           canonicalPath: '/',
           ogType: 'website',
           structuredData: getHomeStructuredData(),

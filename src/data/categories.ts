@@ -9,7 +9,7 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
     description: 'Beauty should make life easier, not turn your bathroom shelf into a chemistry lab. We break down skincare, products, trends and the things actually worth knowing.',
     coverImage: '/assets/images/beauty_skincare_edit_1791476658980.jpg',
     accentColor: '#BA7D70',
-    featuredArticleId: 'smart-girls-guide-skincare-routine',
+    featuredArticleId: 'skincare-routine-for-beginners',
     smartCheckTitle: 'The Beauty Restraint Check',
     seo: {
       metaTitle: 'Beauty: Skincare & Formulation Guides | The Smart Girl Edit',
@@ -25,7 +25,7 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
     description: 'Personal style, intentional wardrobe building, fabric quality and everyday styling that feels distinctively yours without falling for weekly micro-trends.',
     coverImage: '/assets/images/style_capsule_wardrobe_1791476672602.jpg',
     accentColor: '#7D8E78',
-    featuredArticleId: 'build-a-wardrobe-you-actually-wear',
+    featuredArticleId: 'capsule-wardrobe-essentials-for-women',
     smartCheckTitle: 'The 30-Wears Closet Check',
     seo: {
       metaTitle: 'Style: Wardrobe Basics & Personal Taste | The Smart Girl Edit',
@@ -41,7 +41,7 @@ export const CATEGORIES: Record<string, CategoryMeta> = {
     description: 'Realistic budgeting, smart accounts, guilt-free spending boundaries, and financial habits designed for college students and young professionals building independent futures.',
     coverImage: '/assets/images/money_journal_cards_1791476683295.jpg',
     accentColor: '#66564D',
-    featuredArticleId: 'managing-money-in-your-20s',
+    featuredArticleId: 'best-budgeting-apps-for-beginners',
     smartCheckTitle: 'The 48-Hour Cart Hold',
     seo: {
       metaTitle: 'Money: Budgeting & Mindful Spending | The Smart Girl Edit',

@@ -24,21 +24,21 @@ export const HomePage: React.FC<HomePageProps> = ({
   const leadLatestArticle =
     articles.find((a) => a.slug === 'how-social-media-is-changing-shopping' || a.id === 'how-social-media-is-changing-shopping') || articles[0];
   const supportingLatestArticles = [
-    articles.find((a) => a.slug === 'smart-girls-guide-skincare-routine' || a.id === 'smart-girls-guide-skincare-routine') || articles[1],
-    articles.find((a) => a.slug === 'build-a-wardrobe-you-actually-wear' || a.id === 'build-a-wardrobe-you-actually-wear') || articles[2],
+    articles.find((a) => a.slug === 'skincare-routine-for-beginners' || a.id === 'skincare-routine-for-beginners') || articles[1],
+    articles.find((a) => a.slug === 'capsule-wardrobe-essentials-for-women' || a.id === 'capsule-wardrobe-essentials-for-women') || articles[2],
   ].filter(Boolean);
 
   // Trending articles for "What Everyone's Talking About"
   const trendingArticles = articles.filter(
     (a) =>
+      a.slug === 'best-budgeting-apps-for-beginners' ||
       a.slug === 'ai-tools-for-college-students' ||
       a.slug === 'before-you-buy-viral-beauty-product' ||
       a.slug === 'stop-impulse-buying' ||
-      a.slug === 'is-online-product-worth-buying' ||
+      a.id === 'best-budgeting-apps-for-beginners' ||
       a.id === 'ai-tools-for-college-students' ||
       a.id === 'before-you-buy-viral-beauty-product' ||
-      a.id === 'stop-impulse-buying' ||
-      a.id === 'is-online-product-worth-buying'
+      a.id === 'stop-impulse-buying'
   );
 
   // Creator corner articles
@@ -79,9 +79,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <span>·</span>
                 <span>AUTUMN / WINTER 2026</span>
                 <span>·</span>
-                <span>VOLUME 01</span>
+                <span className="text-[#2A211D] font-semibold">A BLOG ABOUT LIFESTYLE</span>
                 <span className="hidden sm:inline">·</span>
-                <span className="hidden sm:inline text-[#2A211D]">THE DIGITAL COVER</span>
+                <span className="hidden sm:inline text-[#BA7D70]">THE DIGITAL COVER</span>
               </div>
 
               {/* Main Headline */}
@@ -91,7 +91,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               {/* Supporting Description */}
               <p className="font-sans text-sm sm:text-base lg:text-[17px] text-[#66564D] max-w-xl leading-relaxed">
-                Beauty, style, money, digital life and everything in between — thoughtfully explained for the modern girl.
+                An intentional, evidence-led <strong className="font-medium text-[#2A211D]">blog about lifestyle</strong> for modern women — deconstructing skincare routines, capsule wardrobes, personal finance, digital life, and everyday discernment.
               </p>
 
               {/* Editorial Theme Marker */}
@@ -294,7 +294,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               The Core Pillars
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2A211D] font-medium mt-1">
-              NEW HERE? START HERE.
+              A BLOG ABOUT LIFESTYLE WITH SUBSTANCE
             </h2>
             <p className="text-xs sm:text-sm text-[#66564D] mt-1.5 font-sans">
               Five editorial pillars to recalibrate your everyday choices with discernment.
