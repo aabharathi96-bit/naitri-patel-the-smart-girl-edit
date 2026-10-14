@@ -6,8 +6,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'smart-girls-guide-skincare-routine',
-    slug: 'skincare-routine-for-your-20s',
-    aliasSlugs: ['smart-girls-guide-skincare-routine', 'beauty/skincare-routine-for-your-20s'],
+    slug: 'skincare-routine',
+    aliasSlugs: ['skincare-routine-for-your-20s', 'smart-girls-guide-skincare-routine', 'beauty/skincare-routine-for-your-20s'],
     title: "THE SMART GIRL'S GUIDE TO BUILDING A SKINCARE ROUTINE",
     category: 'Beauty',
     subcategory: 'Skin Barrier Health',
@@ -74,7 +74,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Once your skin barrier is calm and you haven’t felt a sting in a month, you can introduce a single targeted active to address a specific issue.',
           'If you deal with clogged pores, a 2% Salicylic Acid (BHA) applied twice weekly at night is gold. If you want gentle brightness and redness relief, 10% Azelaic Acid is far gentler than harsh ascorbic acid. And if fine lines or texture are your focus, a buffered 0.2% retinol or retinaldehyde applied over moisturiser will build collagen without peeling your face off.',
-          'Before you buy another trending serum you saw online, consult [our viral beauty product breakdown](/article/how-to-check-viral-beauty-products) to check whether its ingredient concentration is genuinely worth the price tag.',
+          'Before you buy another trending serum you saw online, consult [our viral beauty product breakdown](/blogs/viral-beauty-products) to check whether its ingredient concentration is genuinely worth the price tag.',
         ],
         practicalExamples: [
           {
@@ -93,7 +93,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Skin cell turnover in your twenties takes roughly 28 to 40 days. That means judging whether a skincare product works after four days is biologically impossible.',
           'When you introduce something new, test it on your jawline for three consecutive nights. If no reaction appears, use it consistently for six full weeks before deciding its fate. Swapping serums every Sunday is the number one reason skin stays chronically confused.',
-          'This intentional pacing is also the secret to mindful spending—learn [how to know if an online product is actually worth buying](/article/how-to-know-if-a-product-is-worth-buying) before adding a third moisturizer to your bathroom cabinet.',
+          'This intentional pacing is also the secret to mindful spending—learn [how to know if an online product is actually worth buying](/blogs/smart-online-shopping) before adding a third moisturizer to your bathroom cabinet.',
         ],
       },
       {
@@ -102,7 +102,7 @@ export const ARTICLES: Article[] = [
         content: [
           'You do not need a three-figure skincare budget to have glowing skin. In fact, many of the world’s most respected dermatologists use drugstore staples like CeraVe, Cetaphil, La Roche-Posay, or Simple.',
           'Invest your money where formulation elegance matters most—sunscreen that doesn’t leave a white cast or ball up under clothes—and save on your cleanser and basic barrier lotion, where cheap ingredients like glycerin and petrolatum are clinically proven kings.',
-          'A sustainable skincare habit should feel as effortless and grounding as [building a self-care routine that actually fits your life](/article/self-care-routine-for-your-20s).',
+          'A sustainable skincare habit should feel as effortless and grounding as [building a self-care routine that actually fits your life](/blogs/self-care-routine).',
         ],
       },
     ],
@@ -172,8 +172,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'before-you-buy-viral-beauty-product',
-    slug: 'how-to-check-viral-beauty-products',
-    aliasSlugs: ['before-you-buy-viral-beauty-product', 'beauty/how-to-check-viral-beauty-products'],
+    slug: 'viral-beauty-products',
+    aliasSlugs: ['how-to-check-viral-beauty-products', 'before-you-buy-viral-beauty-product', 'beauty/how-to-check-viral-beauty-products'],
     title: 'BEFORE YOU BUY THAT VIRAL BEAUTY PRODUCT: WHAT YOU SHOULD CHECK',
     category: 'Beauty',
     subcategory: 'Product Discernment',
@@ -210,7 +210,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Viral beauty is engineered to bypass rational cognitive evaluation. High-frame-rate cameras, flattering ring lights, micro-ASMR tapping sounds, and quick cuts create a sensory reward loop in under five seconds.',
           'When combined with algorithmic repetition—seeing four different creators showcase the identical lip tint within twenty minutes—your subconscious creates false social consensus: "Everyone in the world is using this except me."',
-          'This urgency is a direct product of the platform economy, which we examine in depth in [how social media affects shopping](/article/how-social-media-affects-shopping).',
+          'This urgency is a direct product of the platform economy, which we examine in depth in [how social media affects shopping](/blogs/social-media-shopping).',
         ],
         pullQuote: 'Urgency is manufactured to prevent you from sleeping on a purchase decision.',
       },
@@ -232,7 +232,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Cosmetics regulations mandate that ingredients appear in descending order of weight until the 1% threshold is reached. The first five ingredients make up 80% to 90% of the entire formulation.',
           'If a $45 "miracle probiotic peptide elixir" lists water, glycerin, butylene glycol, dimethicone, and phenoxyethanol as its top elements—and the hyped peptide appears after the preservative—you are paying a 900% markup for basic drugstore hydration wrapped in heavy glass.',
-          'Make sure you have [the smart girl’s guide to building a skincare routine](/article/skincare-routine-for-your-20s) handy so you know which ingredients your skin actually requires.',
+          'Make sure you have [the smart girl’s guide to building a skincare routine](/blogs/skincare-routine) handy so you know which ingredients your skin actually requires.',
         ],
         smartTip: {
           title: 'THE SMART GIRL TIP',
@@ -244,7 +244,7 @@ export const ARTICLES: Article[] = [
         title: 'Filtered Reviews, Return Policies & The 3-Star Truth',
         content: [
           'Five-star reviews on brand landing pages are heavily moderated. One-star reviews are often packaging shipping delays. Three-star reviews are where the honest consumers live—people who bought the product with their own hard-earned money and will tell you if the shade oxidizes orange or the tube leaks in your bag.',
-          'Always check return policies. Many viral brands charge $7.99 for returns or only offer store credit, turning an impulse regret into a permanent sunk cost. For a complete guide to spotting dropshipped cosmetics, read [how to know if an online product is actually worth buying](/article/how-to-know-if-a-product-is-worth-buying).',
+          'Always check return policies. Many viral brands charge $7.99 for returns or only offer store credit, turning an impulse regret into a permanent sunk cost. For a complete guide to spotting dropshipped cosmetics, read [how to know if an online product is actually worth buying](/blogs/smart-online-shopping).',
         ],
         worthKnowing: {
           title: 'WORTH KNOWING',
@@ -330,8 +330,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'build-a-wardrobe-you-actually-wear',
-    slug: 'how-to-build-a-wardrobe',
-    aliasSlugs: ['build-a-wardrobe-you-actually-wear', 'style/how-to-build-a-wardrobe'],
+    slug: 'capsule-wardrobe',
+    aliasSlugs: ['how-to-build-a-wardrobe', 'build-a-wardrobe-you-actually-wear', 'style/how-to-build-a-wardrobe'],
     title: 'HOW TO BUILD A WARDROBE YOU ACTUALLY WEAR',
     category: 'Style',
     subcategory: 'Capsule Essentials',
@@ -368,7 +368,7 @@ export const ARTICLES: Article[] = [
         content: [
           'We frequently buy garments for the person we imagine being on a mythical Saturday evening in Milan, rather than the person who walks 8,000 steps across campus, works at a laptop, or sits through three-hour seminars.',
           'Start with an honest percentage breakdown of your weekly hours: lectures/office, errands/downtime, social outings, and formal events. Your wardrobe budget and hanger space should mirror that exact ratio.',
-          'Before buying another isolated top, explore [our guide to finding your personal style](/article/how-to-find-your-personal-style) to understand your silhouette formulas.',
+          'Before buying another isolated top, explore [our guide to finding your personal style](/blogs/find-personal-style) to understand your silhouette formulas.',
         ],
         pullQuote: 'Stop buying for the life you have in your saved folders. Dress the body and schedule you inhabit right now.',
         smartTip: {
@@ -398,7 +398,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Next time you feel that itch to shop, don’t scroll clothing apps aimlessly. Stand in front of your open closet with a notebook and identify the missing connective tissue.',
           'Often, what you need is not another patterned knit, but the neutral leather belt that pulls pants together, or the comfortable leather loafers that bridge the gap between sneakers and heels.',
-          'If you find yourself shopping whenever you feel stressed, read [how to stop impulse buying without giving up shopping](/article/how-to-stop-impulse-buying).',
+          'If you find yourself shopping whenever you feel stressed, read [how to stop impulse buying without giving up shopping](/blogs/stop-impulse-buying).',
         ],
         worthKnowing: {
           title: 'WORTH KNOWING',
@@ -411,7 +411,7 @@ export const ARTICLES: Article[] = [
         content: [
           'A $120 pair of perfectly fitted trousers you wear eighty times across two years costs $1.50 per wear. A $25 polyester dress you wear once to a party costs $25 per wear.',
           'True luxury in your twenties is owning a wardrobe where everything fits, everything coordinates, and getting dressed takes less than three minutes every single day.',
-          'Pairing an organized wardrobe with [a realistic self-care routine](/article/self-care-routine-for-your-20s) turns rushed mornings into calm rituals.',
+          'Pairing an organized wardrobe with [a realistic self-care routine](/blogs/self-care-routine) turns rushed mornings into calm rituals.',
         ],
       },
     ],
@@ -493,8 +493,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'find-your-personal-style',
-    slug: 'how-to-find-your-personal-style',
-    aliasSlugs: ['find-your-personal-style', 'style/how-to-find-your-personal-style'],
+    slug: 'find-personal-style',
+    aliasSlugs: ['how-to-find-your-personal-style', 'find-your-personal-style', 'style/how-to-find-your-personal-style'],
     title: 'HOW TO FIND YOUR PERSONAL STYLE WITHOUT FOLLOWING EVERY TREND',
     category: 'Style',
     subcategory: 'Taste & Identity',
@@ -531,7 +531,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Open your saved folders on Instagram and Pinterest. Look at the last thirty images you bookmarked. Are you saving the clothing, or are you saving the lifestyle, lighting, or setting?',
           'If you keep bookmarking photos of women in tailored linen trousers walking past Italian stone villas with an espresso, notice the constant elements: wide-leg trousers, relaxed tailoring, warm neutral tones, unstudied hair. That is your style pattern.',
-          'Connect this discovery to your actual closet by reading [how to build a wardrobe you actually wear](/article/how-to-build-a-wardrobe).',
+          'Connect this discovery to your actual closet by reading [how to build a wardrobe you actually wear](/blogs/capsule-wardrobe).',
         ],
         pullQuote: 'Signature style is cultivated through repetition, not frantic weekly novelty.',
       },
@@ -561,7 +561,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Having a signature style does not mean you can never enjoy a trend. It means you adopt trends on your terms through small accessories or styling tweaks, rather than replacing your whole wardrobe.',
           'If burgundy is the color of the season, a leather belt or silk scarf lets you participate without spending four hundred dollars on a coat you will hate next October.',
-          'Learn to break the urge to purchase every viral item by exploring [how to stop impulse buying without giving up shopping](/article/how-to-stop-impulse-buying).',
+          'Learn to break the urge to purchase every viral item by exploring [how to stop impulse buying without giving up shopping](/blogs/stop-impulse-buying).',
         ],
         smartTip: {
           title: 'THE SMART GIRL TIP',
@@ -634,8 +634,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'managing-money-in-your-20s',
-    slug: 'how-to-manage-money-in-your-20s',
-    aliasSlugs: ['managing-money-in-your-20s', 'money/how-to-manage-money-in-your-20s'],
+    slug: 'money-management',
+    aliasSlugs: ['how-to-manage-money-in-your-20s', 'managing-money-in-your-20s', 'money/how-to-manage-money-in-your-20s'],
     title: "THE SMART GIRL'S GUIDE TO MANAGING MONEY IN YOUR 20s",
     category: 'Money',
     subcategory: 'Financial Foundations',
@@ -672,7 +672,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Willpower is a finite biological resource. If you have to manually choose to transfer savings on the 28th of every month, everyday expenses and impulsive weekend plans will always find a way to eat it.',
           'Instead, configure automatic transfers on payday morning: 50% to Fixed Essentials (rent, utilities, groceries), 20% directly to an emergency buffer and index funds, and 30% into a dedicated lifestyle account. Once the first two buckets are filled, spend that remaining balance with zero remorse.',
-          'To keep that lifestyle balance from evaporating into online checkout traps, see [how to stop impulse buying without giving up shopping](/article/how-to-stop-impulse-buying).',
+          'To keep that lifestyle balance from evaporating into online checkout traps, see [how to stop impulse buying without giving up shopping](/blogs/stop-impulse-buying).',
         ],
         pullQuote: 'Budgeting is not punishment for spending; it is permission to enjoy what you love without underlying panic.',
         smartTip: {
@@ -686,7 +686,7 @@ export const ARTICLES: Article[] = [
         content: [
           'An emergency fund of three months of basic living expenses is not an investment intended to beat inflation; it is an emotional shock absorber. It is what allows you to walk away from a toxic job, handle an unexpected medical bill, or book a flight home without taking on high-interest credit card debt.',
           'Park that buffer in a High-Yield Savings Account (HYSA) or liquid fund earning 4% to 5% APY, completely separate from your day-to-day spending.',
-          'Before tapping checkout on lifestyle purchases, consult [how to know if an online product is actually worth buying](/article/how-to-know-if-a-product-is-worth-buying) to protect your monthly reserves.',
+          'Before tapping checkout on lifestyle purchases, consult [how to know if an online product is actually worth buying](/blogs/smart-online-shopping) to protect your monthly reserves.',
         ],
         worthKnowing: {
           title: 'WORTH KNOWING',
@@ -699,7 +699,7 @@ export const ARTICLES: Article[] = [
         content: [
           'When you get your first promotion or internship raise, the natural instinct is to immediately upgrade your apartment, order dinner out four nights a week, and buy more clothes. This is called lifestyle creep.',
           'The smart move: when your salary increases by $400 or ₹30,000, immediately route half of that raise into your automated savings and investments. Live on the remaining half. You will feel richer every day while stealthily compounding your net worth.',
-          'Understand how marketing algorithms nudge you toward lifestyle creep by exploring [how social media affects shopping](/article/how-social-media-affects-shopping).',
+          'Understand how marketing algorithms nudge you toward lifestyle creep by exploring [how social media affects shopping](/blogs/social-media-shopping).',
         ],
       },
     ],
@@ -781,8 +781,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'stop-impulse-buying',
-    slug: 'how-to-stop-impulse-buying',
-    aliasSlugs: ['stop-impulse-buying', 'money/how-to-stop-impulse-buying'],
+    slug: 'stop-impulse-buying',
+    aliasSlugs: ['how-to-stop-impulse-buying', 'money/how-to-stop-impulse-buying'],
     title: 'HOW TO STOP IMPULSE BUYING WITHOUT GIVING UP SHOPPING',
     category: 'Money',
     subcategory: 'Mindful Spending',
@@ -818,7 +818,7 @@ export const ARTICLES: Article[] = [
         title: 'The Dopamine Loop: Anticipation vs. Possession',
         content: [
           'Neuroscience reveals that dopamine spikes highest during the browsing phase—when you imagine yourself wearing the coat or receiving compliments at brunch. Once the package is delivered, that spike evaporates almost instantly.',
-          'Knowing this gives you immense leverage: you can enjoy the sensory high of hunting and curating without needing to part with your money. Learn [how social media affects shopping](/article/how-social-media-affects-shopping) to spot how apps exploit this neurochemical loop.',
+          'Knowing this gives you immense leverage: you can enjoy the sensory high of hunting and curating without needing to part with your money. Learn [how social media affects shopping](/blogs/social-media-shopping) to spot how apps exploit this neurochemical loop.',
         ],
         pullQuote: 'The dopamine hit comes from the hunt, not the possession. Learn to enjoy the pause.',
       },
@@ -827,7 +827,7 @@ export const ARTICLES: Article[] = [
         title: 'The 24-Hour Test & Wishlist Method',
         content: [
           'Whenever you feel an overwhelming urge to buy a non-essential item online, add it to your cart, take a screenshot, and close the browser for twenty-four hours. In practice, the vast majority of impulse cravings dissolve once you have slept on the decision and the initial emotional dopamine surge has cooled.',
-          'Keep a single running note on your phone titled "Curated Wishlist." When you pair this with [how to manage money in your 20s](/article/how-to-manage-money-in-your-20s), you have dedicated guilt-free money reserved for what you genuinely cherish.',
+          'Keep a single running note on your phone titled "Curated Wishlist." When you pair this with [how to manage money in your 20s](/blogs/money-management), you have dedicated guilt-free money reserved for what you genuinely cherish.',
         ],
         smartTip: {
           title: 'THE SMART GIRL TIP',
@@ -840,7 +840,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Most impulse purchases happen between 10:00 PM and midnight, or immediately after a stressful workday. When you notice that urge rising, ask yourself what physical need is being masked: Are you exhausted? Hungry? Procrastinating on an assignment?',
           'Address the root need first—eat a warm meal, close your laptop, or go to sleep. Nine times out of ten, the urge to checkout will vanish with the fatigue.',
-          'For a complete framework on evaluating online claims, read [how to know if an online product is actually worth buying](/article/how-to-know-if-a-product-is-worth-buying).',
+          'For a complete framework on evaluating online claims, read [how to know if an online product is actually worth buying](/blogs/smart-online-shopping).',
         ],
       },
     ],
@@ -915,8 +915,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'how-social-media-is-changing-shopping',
-    slug: 'how-social-media-affects-shopping',
-    aliasSlugs: ['how-social-media-is-changing-shopping', 'digital/how-social-media-affects-shopping'],
+    slug: 'social-media-shopping',
+    aliasSlugs: ['how-social-media-affects-shopping', 'how-social-media-is-changing-shopping', 'digital/how-social-media-affects-shopping'],
     title: 'HOW SOCIAL MEDIA IS CHANGING THE WAY WE SHOP',
     category: 'Digital',
     subcategory: 'Consumer Culture',
@@ -959,7 +959,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Technology platforms have spent billions engineering the complete removal of friction. Biometric scans, pre-saved shipping addresses, and in-app checkout windows ensure that the time between seeing an item and owning it is less than five seconds.',
           'When cognitive friction disappears, your rational prefrontal cortex never gets the chance to weigh in. You purchase items in the exact same distracted brainwave state you use to scroll memes.',
-          'Learn to spot misleading product claims before tapping confirm by reading [before you buy that viral beauty product](/article/how-to-check-viral-beauty-products).',
+          'Learn to spot misleading product claims before tapping confirm by reading [before you buy that viral beauty product](/blogs/viral-beauty-products).',
         ],
         pullQuote: 'You are no longer deciding to go shopping; the digital mall has enveloped your relaxation time.',
         smartTip: {
@@ -985,7 +985,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Regaining ownership of your wallet does not mean throwing your phone into a river. It means recognizing the psychological levers being pulled.',
           'When you see a creator praise a product, ask: "Would I search for this if it didn’t appear on my screen right now?" If the answer is no, close the app and move on.',
-          'Reinforce your financial boundary with [how to stop impulse buying without giving up shopping](/article/how-to-stop-impulse-buying) and learn [how to know if an online product is actually worth buying](/article/how-to-know-if-a-product-is-worth-buying).',
+          'Reinforce your financial boundary with [how to stop impulse buying without giving up shopping](/blogs/stop-impulse-buying) and learn [how to know if an online product is actually worth buying](/blogs/smart-online-shopping).',
         ],
       },
     ],
@@ -1061,7 +1061,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'ai-tools-for-college-students',
-    slug: 'ai-tools-for-college-students',
+    slug: 'college-ai-tools',
+    aliasSlugs: ['ai-tools-for-college-students', 'ai-tools-college', 'digital/ai-tools-for-college-students'],
     title: 'AI TOOLS EVERY COLLEGE GIRL SHOULD KNOW ABOUT',
     category: 'Digital',
     subcategory: 'Productivity & Studies',
@@ -1111,7 +1112,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Paste an internship job posting and your draft resume, then prompt: "Audit these bullets against the job requirements. Point out vague descriptions and suggest quantifiable metrics to showcase impact."',
           'Then ask: "Conduct a realistic 10-minute behavioral interview for this position. Ask challenging questions one by one and grade my answers on specificity."',
-          'Protecting your digital focus is just as vital as study tools—explore [our analysis of modern digital shopping habits](/article/how-social-media-affects-shopping).',
+          'Protecting your digital focus is just as vital as study tools—explore [our analysis of modern digital shopping habits](/blogs/social-media-shopping).',
         ],
         worthKnowing: {
           title: 'WORTH KNOWING',
@@ -1124,7 +1125,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Generative models still hallucinate citations and misattribute historical dates. Always verify references in real university databases (JSTOR, PubMed, Google Scholar).',
           'Use AI to outline your thoughts, challenge your counterarguments, and format citations—but write your sentences in your authentic, unmistakable voice.',
-          'Building high-leverage study habits frees up time for [restful, guilt-free self-care](/article/self-care-routine-for-your-20s).',
+          'Building high-leverage study habits frees up time for [restful, guilt-free self-care](/blogs/self-care-routine).',
         ],
       },
     ],
@@ -1194,8 +1195,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'is-online-product-worth-buying',
-    slug: 'how-to-know-if-a-product-is-worth-buying',
-    aliasSlugs: ['is-online-product-worth-buying', 'life/how-to-know-if-a-product-is-worth-buying', 'digital/how-to-know-if-a-product-is-worth-buying'],
+    slug: 'smart-online-shopping',
+    aliasSlugs: ['how-to-know-if-a-product-is-worth-buying', 'is-online-product-worth-buying', 'life/how-to-know-if-a-product-is-worth-buying', 'digital/how-to-know-if-a-product-is-worth-buying'],
     title: 'HOW TO KNOW IF AN ONLINE PRODUCT IS ACTUALLY WORTH BUYING',
     category: 'Life',
     subcategory: 'Smart Living & Consumer Discernment',
@@ -1232,8 +1233,8 @@ export const ARTICLES: Article[] = [
         title: 'The Reverse Image Search Rule',
         content: [
           'Before buying from an unfamiliar boutique brand, right-click the product image and run it through Google Lens or a reverse image search. If the identical image appears on wholesale import sites for $5.50 under six different generic brand names, you are paying a 1,200% markup for a curated color palette.',
-          'Similarly, in cosmetic products, apply [our viral beauty product check](/article/how-to-check-viral-beauty-products) to scrutinize active formulations before believing marketing claims.',
-          'Much of this dropshipping surge is fueled by social commerce feeds—see [how social media affects shopping](/article/how-social-media-affects-shopping).',
+          'Similarly, in cosmetic products, apply [our viral beauty product check](/blogs/viral-beauty-products) to scrutinize active formulations before believing marketing claims.',
+          'Much of this dropshipping surge is fueled by social commerce feeds—see [how social media affects shopping](/blogs/social-media-shopping).',
         ],
         pullQuote: 'Aesthetic typography and a beige photo filter do not turn cheap polyester into luxury craftsmanship.',
         smartTip: {
@@ -1246,7 +1247,7 @@ export const ARTICLES: Article[] = [
         title: 'Always Read the 3-Star Reviews First',
         content: [
           'Five-star reviews on commercial storefronts are frequently incentivized through free gifting sweepstakes. One-star reviews are often packaging shipping delays. Three-star reviews are where the honest consumers live—people who bought the piece with their own money and will tell you if the zipper sticks, if the sizing runs tiny, or if the fabric pills after one wash.',
-          'Review habits tie directly to mindful money management—learn [the fundamentals of managing money in your 20s](/article/how-to-manage-money-in-your-20s).',
+          'Review habits tie directly to mindful money management—learn [the fundamentals of managing money in your 20s](/blogs/money-management).',
         ],
         worthKnowing: {
           title: 'WORTH KNOWING',
@@ -1258,7 +1259,7 @@ export const ARTICLES: Article[] = [
         title: 'Return Policies, Marketplace Sellers & Problem-Solving',
         content: [
           'Before entering credit card numbers, scroll to the footer and read the return policy. If the brand charges $10 for return shipping, offers store credit only, or requires items to be shipped back to an overseas address at customer expense, consider that a massive warning sign.',
-          'Finally, ask: Does this product solve an actual friction point in my everyday life, or does it merely look pretty on a screen? If it doesn’t solve a real problem, pause before buying by trying [our guide to stop impulse buying](/article/how-to-stop-impulse-buying).',
+          'Finally, ask: Does this product solve an actual friction point in my everyday life, or does it merely look pretty on a screen? If it doesn’t solve a real problem, pause before buying by trying [our guide to stop impulse buying](/blogs/stop-impulse-buying).',
         ],
       },
     ],
@@ -1328,8 +1329,8 @@ export const ARTICLES: Article[] = [
   // =========================================================================
   {
     id: 'self-care-routine-that-fits-your-life',
-    slug: 'self-care-routine-for-your-20s',
-    aliasSlugs: ['self-care-routine-that-fits-your-life', 'life/self-care-routine-for-your-20s'],
+    slug: 'self-care-routine',
+    aliasSlugs: ['self-care-routine-for-your-20s', 'self-care-routine-that-fits-your-life', 'life/self-care-routine-for-your-20s'],
     title: 'HOW TO BUILD A SELF-CARE ROUTINE THAT ACTUALLY FITS YOUR LIFE',
     category: 'Life',
     subcategory: 'Everyday Wellness',
@@ -1366,7 +1367,7 @@ export const ARTICLES: Article[] = [
         content: [
           'True self-care is often unglamorous. It is scheduling that dentist appointment, closing your laptop at 10:30 PM, drinking tap water, taking a walk without headphones, and washing your pillowcases.',
           'When self-care requires buying five new branded accessories, it is no longer restoration; it is just another exhausting to-do list.',
-          'Notice how this grounding simplicity matches [the smart girl’s guide to building a skincare routine](/article/skincare-routine-for-your-20s)—subtraction almost always beats addition.',
+          'Notice how this grounding simplicity matches [the smart girl’s guide to building a skincare routine](/blogs/skincare-routine)—subtraction almost always beats addition.',
         ],
         pullQuote: 'Real self-care is building a life you do not constantly need to escape from.',
         smartTip: {
@@ -1380,7 +1381,7 @@ export const ARTICLES: Article[] = [
         content: [
           'Caring for yourself is multifaceted. It isn’t just physical bath salts; it touches every corner of your everyday routine:',
           'Physical: Consistent sleep timing and non-punitive movement.',
-          'Financial: Automating your savings so you don’t feel ambient money dread (see [our money guide for your 20s](/article/how-to-manage-money-in-your-20s)).',
+          'Financial: Automating your savings so you don’t feel ambient money dread (see [our money guide for your 20s](/blogs/money-management)).',
           'Digital: Charging your phone across the room at night so you don’t wake up straight into algorithm feeds.',
           'Social: Politely saying no to events where you know you will leave emotionally drained.',
           'Environmental: Wiping down your desk on Friday afternoon so Monday morning feels spacious.',
@@ -1394,7 +1395,7 @@ export const ARTICLES: Article[] = [
         id: 'small-habits-and-evening-anchors',
         title: 'Small Habits & The 15-Minute Evening Anchor',
         content: [
-          'Design an evening transition that takes fifteen minutes or less: wipe down the kitchen counter, lay out tomorrow’s clothes (referencing [how to build a wardrobe you actually wear](/article/how-to-build-a-wardrobe)), put your phone in another room, and read one chapter of fiction in bed.',
+          'Design an evening transition that takes fifteen minutes or less: wipe down the kitchen counter, lay out tomorrow’s clothes (referencing [how to build a wardrobe you actually wear](/blogs/capsule-wardrobe)), put your phone in another room, and read one chapter of fiction in bed.',
           'When life gets chaotic during midterms or intense project deadlines, your routine shouldn’t collapse—it should shrink to its calmest fifteen-minute core.',
         ],
       },

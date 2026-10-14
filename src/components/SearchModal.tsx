@@ -132,7 +132,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               {filteredArticles.map((article) => (
                 <a
                   key={article.id}
-                  href={`/article/${article.slug}`}
+                  href={`/blogs/${article.slug}`}
                   onClick={(e) => {
                     if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                       e.preventDefault();

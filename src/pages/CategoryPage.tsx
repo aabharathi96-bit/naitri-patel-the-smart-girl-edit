@@ -94,7 +94,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
             </div>
 
             <a
-              href={`/article/${featured.slug}`}
+              href={`/blogs/${featured.slug}`}
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
@@ -158,7 +158,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({
             {categoryArticles.map((article) => (
               <a
                 key={article.id}
-                href={`/article/${article.slug}`}
+                href={`/blogs/${article.slug}`}
                 onClick={(e) => {
                   if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                     e.preventDefault();

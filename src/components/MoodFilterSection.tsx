@@ -184,7 +184,7 @@ export const MoodFilterSection: React.FC<MoodFilterSectionProps> = ({
             {matchedArticles.slice(0, 3).map((article) => (
               <a
                 key={article.id}
-                href={`/article/${article.slug}`}
+                href={`/blogs/${article.slug}`}
                 onClick={(e) => {
                   if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                     e.preventDefault();

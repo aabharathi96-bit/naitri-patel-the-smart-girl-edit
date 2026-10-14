@@ -26,6 +26,7 @@ interface ArticlePageProps {
   onSelectArticle: (slugOrId: string) => void;
   onNavigateCategory: (category: Category) => void;
   onNavigateHome: () => void;
+  onNavigateBlogs?: () => void;
 }
 
 export const ArticlePage: React.FC<ArticlePageProps> = ({
@@ -34,6 +35,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   onSelectArticle,
   onNavigateCategory,
   onNavigateHome,
+  onNavigateBlogs,
 }) => {
   const [activeSectionId, setActiveSectionId] = useState<string>(
     article.sections[0]?.id || ''
@@ -96,7 +98,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
         ];
 
   const handleShare = () => {
-    const fullUrl = `${window.location.origin}/article/${article.slug}`;
+    const fullUrl = `${window.location.origin}/blogs/${article.slug}`;
     if (navigator.clipboard) {
       navigator.clipboard.writeText(fullUrl);
       setCopied(true);
@@ -114,7 +116,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
     }
   };
 
-  // Helper to parse internal markdown links like [anchor text](#/article/slug) or [anchor text](/article/slug)
+  // Helper to parse internal markdown links like [anchor text](/blogs/slug) or [anchor text](/article/slug)
   const renderParagraphWithLinks = (text: string) => {
     const linkRegex = /\[(.*?)\]\((.*?)\)/g;
     const elements: React.ReactNode[] = [];
@@ -130,12 +132,12 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
       const targetSlug = rawTarget
         .replace(/^#\/?/, '')
         .replace(/^\/+/, '')
-        .replace(/^(beauty|style|money|digital|life|article|blog)\//i, '');
+        .replace(/^(beauty|style|money|digital|life|article|blog|blogs)\//i, '');
 
       elements.push(
         <a
           key={match.index}
-          href={`/article/${targetSlug}`}
+          href={`/blogs/${targetSlug}`}
           onClick={(e) => {
             if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
               e.preventDefault();
@@ -158,16 +160,16 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
   return (
     <article className="bg-[#FAF7F2] min-h-screen pb-24">
       {/* 1. TOP BREADCRUMB & METADATA BAR */}
-      <div className="pt-6 pb-4 border-b border-[#EAE3D9] bg-[#F7F2EA]/80 sticky top-18 sm:top-20 z-30 backdrop-blur-md">
+      <div className="pt-6 pb-4 border-b border-[#EAE3D9] bg-[#F7F2EA]/90 sticky top-18 sm:top-20 z-30 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-[#8C7A70]">
             <div className="flex items-center gap-2.5">
               <button
-                onClick={onNavigateHome}
+                onClick={onNavigateBlogs || onNavigateHome}
                 className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF7F2] border border-[#DDCFC5] hover:border-[#BA7D70] text-[#2A211D] font-medium rounded-xs text-[11px] uppercase tracking-wider transition-colors cursor-pointer"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
-                <span>All Articles</span>
+                <span>All Blogs</span>
               </button>
 
               <span className="text-[#DDCFC5] hidden sm:inline">/</span>
@@ -185,19 +187,30 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
                 </a>
                 <span>/</span>
                 <a
+                  href="/blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onNavigateBlogs) onNavigateBlogs();
+                  }}
+                  className="hover:text-[#2A211D] transition-colors font-mono uppercase text-[11px]"
+                >
+                  Blogs
+                </a>
+                <span>/</span>
+                <a
                   href={`/category/${article.category}`}
                   onClick={(e) => {
                     e.preventDefault();
                     onNavigateCategory(article.category);
                   }}
-                  className="font-medium text-[#BA7D70] hover:underline uppercase tracking-wider font-mono"
+                  className="font-medium text-[#BA7D70] hover:underline uppercase tracking-wider font-mono text-[11px]"
                 >
                   {article.category}
                 </a>
                 {article.subcategory && (
                   <>
                     <span>/</span>
-                    <span className="font-sans text-[#66564D] truncate max-w-[150px]">
+                    <span className="font-sans text-[#66564D] truncate max-w-[140px]">
                       {article.subcategory}
                     </span>
                   </>

@@ -7,6 +7,7 @@ import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
 import { AboutModal } from './components/AboutModal';
 import { HomePage } from './pages/HomePage';
+import { BlogsPage } from './pages/BlogsPage';
 import { CategoryPage } from './pages/CategoryPage';
 import { ArticlePage } from './pages/ArticlePage';
 import { CreatorCornerSection } from './components/CreatorCornerSection';
@@ -20,7 +21,7 @@ import {
   getCategoryStructuredData,
 } from './utils/seo';
 
-type ViewMode = 'home' | 'category' | 'article' | 'creator-corner';
+type ViewMode = 'home' | 'blogs' | 'category' | 'article' | 'creator-corner';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('home');
@@ -32,7 +33,7 @@ export default function App() {
   // Helper to resolve an article by slug, id, canonicalSlug, or aliasSlugs
   const resolveArticle = (input: string) => {
     const raw = input.trim().replace(/^#\/?/, '').replace(/^\/+/, '');
-    const clean = raw.replace(/^(beauty|style|money|digital|life|article|blog)\//i, '');
+    const clean = raw.replace(/^(beauty|style|money|digital|life|articles|article|blogs|blog)\//i, '');
     return ARTICLES.find(
       (a) =>
         a.slug === clean ||
@@ -71,6 +72,18 @@ export default function App() {
           description:
             'A modern editorial lifestyle publication for women in their 20s covering beauty, personal style, money management, digital life, and smarter everyday choices.',
           canonicalPath: '/',
+          ogType: 'website',
+          structuredData: getHomeStructuredData(),
+        });
+      } else if (route === 'blogs') {
+        setViewMode('blogs');
+        setSelectedCategory(null);
+        setSelectedArticleId(null);
+        updateSEO({
+          title: 'All Blogs & Guides — The Smart Girl Edit',
+          description:
+            'Explore our complete archive of independent editorial articles across beauty, personal style, money management, and modern digital life.',
+          canonicalPath: '/blogs',
           ogType: 'website',
           structuredData: getHomeStructuredData(),
         });
@@ -120,7 +133,7 @@ export default function App() {
           }),
         });
       } else {
-        // Resolve article (supports /article/:slug, /blog/:slug, or direct :slug)
+        // Resolve article (supports /blogs/:slug, /article/:slug, /blog/:slug, or direct :slug)
         const matched = resolveArticle(route);
         if (matched) {
           setViewMode('article');
@@ -128,7 +141,7 @@ export default function App() {
           setSelectedCategory(matched.category);
           const title = matched.seo?.metaTitle || `${matched.title} — The Smart Girl Edit`;
           const description = matched.seo?.metaDescription || matched.dek;
-          const canonicalPath = `/article/${matched.slug}`;
+          const canonicalPath = `/blogs/${matched.slug}`;
           updateSEO({
             title,
             description,
@@ -185,6 +198,25 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateBlogs = () => {
+    const newPath = '/blogs';
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
+    setViewMode('blogs');
+    setSelectedCategory(null);
+    setSelectedArticleId(null);
+    updateSEO({
+      title: 'All Blogs & Guides — The Smart Girl Edit',
+      description:
+        'Explore our complete archive of independent editorial articles across beauty, personal style, money management, and modern digital life.',
+      canonicalPath: newPath,
+      ogType: 'website',
+      structuredData: getHomeStructuredData(),
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navigateCategory = (category: Category) => {
     const newPath = `/category/${category}`;
     if (window.location.pathname !== newPath) {
@@ -216,7 +248,7 @@ export default function App() {
   const navigateArticle = (slugOrId: string) => {
     const art = resolveArticle(slugOrId);
     const targetSlug = art ? art.slug : slugOrId;
-    const newPath = `/article/${targetSlug}`;
+    const newPath = `/blogs/${targetSlug}`;
     if (window.location.pathname !== newPath) {
       window.history.pushState(null, '', newPath);
     }
@@ -284,6 +316,7 @@ export default function App() {
       <Header
         currentCategory={selectedCategory}
         onNavigateHome={navigateHome}
+        onNavigateBlogs={navigateBlogs}
         onNavigateCategory={navigateCategory}
         onNavigateCreatorCorner={navigateCreatorCorner}
         onOpenSearch={() => setSearchOpen(true)}
@@ -297,6 +330,15 @@ export default function App() {
             onSelectArticle={navigateArticle}
             onNavigateCategory={navigateCategory}
             onNavigateCreatorCorner={navigateCreatorCorner}
+          />
+        )}
+
+        {viewMode === 'blogs' && (
+          <BlogsPage
+            articles={ARTICLES}
+            onSelectArticle={navigateArticle}
+            onNavigateHome={navigateHome}
+            onNavigateCategory={navigateCategory}
           />
         )}
 
@@ -317,6 +359,7 @@ export default function App() {
             onSelectArticle={navigateArticle}
             onNavigateCategory={navigateCategory}
             onNavigateHome={navigateHome}
+            onNavigateBlogs={navigateBlogs}
           />
         )}
 
@@ -410,6 +453,7 @@ export default function App() {
       {/* Footer */}
       <Footer
         onNavigateHome={navigateHome}
+        onNavigateBlogs={navigateBlogs}
         onNavigateCategory={navigateCategory}
         onOpenAbout={() => setAboutOpen(true)}
       />

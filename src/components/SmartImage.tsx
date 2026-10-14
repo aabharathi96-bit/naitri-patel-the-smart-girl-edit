@@ -5,24 +5,32 @@ interface SmartImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   categoryAccent?: string;
 }
 
+const normalizeSrc = (url?: string) => {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
+    return url;
+  }
+  return `/${url}`;
+};
+
 export const SmartImage: React.FC<SmartImageProps> = ({
   src,
   alt,
   className = '',
   fallbackTitle = 'Editorial Feature',
   categoryAccent = '#E4B7AD',
-  loading = 'lazy',
+  loading = 'eager',
   decoding = 'async',
   ...props
 }) => {
-  const [currentSrc, setCurrentSrc] = useState(src || '');
+  const [currentSrc, setCurrentSrc] = useState(() => normalizeSrc(src));
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   // Sync currentSrc when src prop changes
   useEffect(() => {
-    setCurrentSrc(src || '');
+    setCurrentSrc(normalizeSrc(src));
     setHasError(false);
     setIsLoaded(false);
   }, [src]);
@@ -48,16 +56,16 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     return (
       <div
         className={`relative flex flex-col items-center justify-center overflow-hidden bg-[#F4EFEA] text-[#66564D] p-6 text-center ${className}`}
-        style={{ minHeight: '180px' }}
+        style={{ minHeight: '140px' }}
       >
         <div
-          className="w-12 h-12 rounded-full flex items-center justify-center mb-3 text-xs tracking-widest font-serif uppercase border"
+          className="w-10 h-10 rounded-full flex items-center justify-center mb-2 text-xs tracking-widest font-serif uppercase border"
           style={{ borderColor: categoryAccent, color: categoryAccent }}
         >
           EDIT
         </div>
-        <p className="font-serif italic text-base text-[#2A211D] max-w-xs">{fallbackTitle}</p>
-        <span className="text-[11px] tracking-wider uppercase text-[#8C7A70] mt-1">The Smart Girl Edit</span>
+        <p className="font-serif italic text-sm text-[#2A211D] max-w-xs">{fallbackTitle}</p>
+        <span className="text-[10px] tracking-wider uppercase text-[#8C7A70] mt-1">The Smart Girl Edit</span>
       </div>
     );
   }
@@ -76,11 +84,10 @@ export const SmartImage: React.FC<SmartImageProps> = ({
         onLoad={() => setIsLoaded(true)}
         onError={handleError}
         style={{ imageRendering: 'auto' }}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-90'
-        }`}
+        className="w-full h-full object-cover transition-opacity duration-300 block opacity-100"
         {...props}
       />
     </div>
   );
 };
+

@@ -5,6 +5,7 @@ import { Category } from '../types';
 interface HeaderProps {
   currentCategory?: Category | null;
   onNavigateHome: () => void;
+  onNavigateBlogs?: () => void;
   onNavigateCategory: (category: Category) => void;
   onNavigateCreatorCorner: () => void;
   onOpenSearch: () => void;
@@ -23,6 +24,7 @@ const CATEGORY_SYMBOLS: Record<Category, string> = {
 export const Header: React.FC<HeaderProps> = ({
   currentCategory,
   onNavigateHome,
+  onNavigateBlogs,
   onNavigateCategory,
   onNavigateCreatorCorner,
   onOpenSearch,
@@ -53,8 +55,21 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </a>
 
-        {/* Zone 2: 5 clean category nav links */}
-        <nav className="hidden md:flex items-center space-x-7 lg:space-x-9">
+        {/* Zone 2: Clean nav links */}
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <a
+            href="/blogs"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                if (onNavigateBlogs) onNavigateBlogs();
+              }
+            }}
+            className="text-sm lg:text-[15px] font-medium tracking-wide transition-colors relative py-1 cursor-pointer whitespace-nowrap flex items-center gap-1.5 no-underline text-[#66564D] hover:text-[#2A211D]"
+          >
+            <span>All Blogs</span>
+          </a>
+
           {CATEGORIES.map((cat) => {
             const isActive = currentCategory === cat;
             return (
@@ -121,9 +136,27 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[#EAE3D9] bg-[#FAF7F2] px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="text-[11px] uppercase tracking-widest text-[#8C7A70] pb-1 border-b border-[#EAE3D9]/60">
-            Categories
+            Navigation
           </div>
           <div className="flex flex-col space-y-3">
+            <a
+              href="/blogs"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  if (onNavigateBlogs) onNavigateBlogs();
+                  setMobileMenuOpen(false);
+                }
+              }}
+              className="text-left text-lg font-serif py-1 flex items-center justify-between cursor-pointer no-underline text-[#2A211D] hover:text-[#BA7D70]"
+            >
+              <span className="flex items-center gap-2">
+                <span className="text-sm text-[#BA7D70]">✦</span>
+                <span>All Blogs &amp; Guides</span>
+              </span>
+              <span className="text-xs font-sans text-[#8C7A70] tracking-wider uppercase">View</span>
+            </a>
+
             {CATEGORIES.map((cat) => (
               <a
                 key={cat}

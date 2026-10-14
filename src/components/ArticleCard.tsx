@@ -23,7 +23,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   if (variant === 'featured') {
     return (
       <a
-        href={`/article/${article.slug}`}
+        href={`/blogs/${article.slug}`}
         onClick={(e) => {
           if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
             e.preventDefault();
@@ -81,7 +81,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   if (variant === 'horizontal') {
     return (
       <a
-        href={`/article/${article.slug}`}
+        href={`/blogs/${article.slug}`}
         onClick={(e) => {
           if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
             e.preventDefault();
@@ -130,7 +130,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   if (variant === 'compact') {
     return (
       <a
-        href={`/article/${article.slug}`}
+        href={`/blogs/${article.slug}`}
         onClick={(e) => {
           if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
             e.preventDefault();
@@ -172,7 +172,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   // Standard card
   return (
     <a
-      href={`/article/${article.slug}`}
+      href={`/blogs/${article.slug}`}
       onClick={(e) => {
         if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
           e.preventDefault();

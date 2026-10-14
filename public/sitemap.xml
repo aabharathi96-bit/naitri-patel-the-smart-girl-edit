@@ -48,64 +48,72 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Editorial Articles -->
+  <!-- Editorial Blogs Index -->
   <url>
-    <loc>https://thesmartgirledit.com/article/skincare-routine-for-your-20s</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Editorial Blog Articles (Unique Clean Slugs) -->
+  <url>
+    <loc>https://thesmartgirledit.com/blogs/skincare-routine</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-to-check-viral-beauty-products</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/viral-beauty-products</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-to-build-a-wardrobe</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/capsule-wardrobe</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-to-find-your-personal-style</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/find-personal-style</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-to-manage-money-in-your-20s</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/money-management</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-to-stop-impulse-buying</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/stop-impulse-buying</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-social-media-affects-shopping</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/social-media-shopping</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/ai-tools-for-college-students</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/college-ai-tools</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/how-to-know-if-a-product-is-worth-buying</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/smart-online-shopping</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thesmartgirledit.com/article/self-care-routine-for-your-20s</loc>
-    <lastmod>2026-10-08</lastmod>
+    <loc>https://thesmartgirledit.com/blogs/self-care-routine</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

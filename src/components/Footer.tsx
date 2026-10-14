@@ -3,6 +3,7 @@ import { Category } from '../types';
 
 interface FooterProps {
   onNavigateHome: () => void;
+  onNavigateBlogs?: () => void;
   onNavigateCategory: (category: Category) => void;
   onOpenAbout: () => void;
 }
@@ -11,6 +12,7 @@ const CATEGORIES: Category[] = ['Beauty', 'Style', 'Money', 'Digital', 'Life'];
 
 export const Footer: React.FC<FooterProps> = ({
   onNavigateHome,
+  onNavigateBlogs,
   onNavigateCategory,
   onOpenAbout,
 }) => {
@@ -61,6 +63,20 @@ export const Footer: React.FC<FooterProps> = ({
               Explore The Edit
             </h4>
             <ul className="space-y-2.5">
+              <li>
+                <a
+                  href="/blogs"
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                      e.preventDefault();
+                      if (onNavigateBlogs) onNavigateBlogs();
+                    }
+                  }}
+                  className="text-sm font-sans text-[#EAE3D9]/80 hover:text-[#FAF7F2] hover:translate-x-1 transition-all cursor-pointer flex items-center gap-2 no-underline font-medium text-[#E4B7AD]"
+                >
+                  <span>✦ All Blogs &amp; Guides</span>
+                </a>
+              </li>
               {CATEGORIES.map((cat) => (
                 <li key={cat}>
                   <a

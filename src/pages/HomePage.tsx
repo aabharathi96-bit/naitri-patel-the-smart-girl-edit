@@ -186,7 +186,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* ONE LARGE FEATURED ARTICLE (7 Columns) */}
             <a
-              href={`/article/${leadLatestArticle.slug}`}
+              href={`/blogs/${leadLatestArticle.slug}`}
               onClick={(e) => {
                 if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                   e.preventDefault();
@@ -238,7 +238,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {supportingLatestArticles.map((story) => (
                 <a
                   key={story.id}
-                  href={`/article/${story.slug}`}
+                  href={`/blogs/${story.slug}`}
                   onClick={(e) => {
                     if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                       e.preventDefault();
@@ -461,7 +461,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             {trendingArticles.map((story) => (
               <a
                 key={story.id}
-                href={`/article/${story.slug}`}
+                href={`/blogs/${story.slug}`}
                 onClick={(e) => {
                   if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                     e.preventDefault();

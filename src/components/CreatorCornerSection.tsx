@@ -68,7 +68,7 @@ export const CreatorCornerSection: React.FC<CreatorCornerSectionProps> = ({
           <div className="lg:col-span-7">
             {featured && (
               <a
-                href={`/article/${featured.slug}`}
+                href={`/blogs/${featured.slug}`}
                 onClick={(e) => {
                   if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
                     e.preventDefault();
