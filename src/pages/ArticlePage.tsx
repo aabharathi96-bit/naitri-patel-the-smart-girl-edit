@@ -256,6 +256,7 @@ export const ArticlePage: React.FC<ArticlePageProps> = ({
             src={article.heroImage}
             alt={article.heroImageAlt || article.title}
             fallbackTitle={article.title}
+            loading="eager"
             className="w-full h-full object-cover"
           />
         </div>

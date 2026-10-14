@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface SmartImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackTitle?: string;
@@ -15,10 +15,43 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   decoding = 'async',
   ...props
 }) => {
+  const [currentSrc, setCurrentSrc] = useState(src || '');
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [retryAttempted, setRetryAttempted] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null);
 
-  if (!src || hasError) {
+  // Sync currentSrc when src prop changes
+  useEffect(() => {
+    setCurrentSrc(src || '');
+    setHasError(false);
+    setIsLoaded(false);
+    setRetryAttempted(false);
+  }, [src]);
+
+  // Check if image is already loaded from cache or fast network
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [currentSrc]);
+
+  const handleError = () => {
+    if (!retryAttempted && currentSrc) {
+      setRetryAttempted(true);
+      // Alternate between /assets/images and /src/assets/images to guarantee fallback resolution
+      if (currentSrc.includes('/src/assets/images/')) {
+        setCurrentSrc(currentSrc.replace('/src/assets/images/', '/assets/images/'));
+        return;
+      } else if (currentSrc.includes('/assets/images/')) {
+        setCurrentSrc(currentSrc.replace('/assets/images/', '/src/assets/images/'));
+        return;
+      }
+    }
+    setHasError(true);
+  };
+
+  if (!currentSrc || hasError) {
     return (
       <div
         className={`relative flex flex-col items-center justify-center overflow-hidden bg-[#F4EFEA] text-[#66564D] p-6 text-center ${className}`}
@@ -42,15 +75,16 @@ export const SmartImage: React.FC<SmartImageProps> = ({
         <div className="absolute inset-0 bg-[#EAE3D9]/40 animate-pulse pointer-events-none" />
       )}
       <img
-        src={src}
+        ref={imgRef}
+        src={currentSrc}
         alt={alt || fallbackTitle}
         loading={loading}
         decoding={decoding}
-        referrerPolicy="no-referrer"
         onLoad={() => setIsLoaded(true)}
-        onError={() => setHasError(true)}
-        className={`w-full h-full object-cover transition-all duration-700 ${
-          isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+        onError={handleError}
+        style={{ imageRendering: 'auto' }}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         {...props}
       />

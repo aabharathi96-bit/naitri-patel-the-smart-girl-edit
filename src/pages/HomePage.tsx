@@ -138,9 +138,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="relative group">
                 <div className="aspect-[4/3] sm:aspect-[4/3] overflow-hidden rounded-xs border border-[#DDCFC5] shadow-md bg-[#F2ECE5]">
                   <SmartImage
-                    src="/src/assets/images/smart_girl_hero_cover_1791477860935.jpg"
+                    src="/assets/images/smart_girl_hero_cover_1791477860935.jpg"
                     alt="The Smart Girl Edit cover photograph of a chic young woman journaling in a warm Paris cafe"
                     fallbackTitle="The Smart Girl Edit Digital Cover"
+                    loading="eager"
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>

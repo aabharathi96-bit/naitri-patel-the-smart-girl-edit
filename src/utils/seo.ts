@@ -65,7 +65,7 @@ export function updateSEO({
   canonicalEl.setAttribute('href', canonicalUrl);
 
   // Image OpenGraph tags
-  const defaultImage = `${origin}/src/assets/images/smart_girl_hero_cover_1791477860935.jpg`;
+  const defaultImage = `${origin}/assets/images/smart_girl_hero_cover_1791477860935.jpg`;
   const resolvedImage = image ? (image.startsWith('http') ? image : `${origin}${image}`) : defaultImage;
   setMeta('property', 'og:image', resolvedImage);
   if (imageAlt) {
@@ -126,7 +126,7 @@ export function getHomeStructuredData(siteUrl: string = SITE_URL) {
       '@type': 'Organization',
       name: 'The Smart Girl Edit',
       url: siteUrl,
-      logo: `${siteUrl}/src/assets/images/smart_girl_hero_cover_1791477860935.jpg`,
+      logo: `${siteUrl}/assets/images/smart_girl_hero_cover_1791477860935.jpg`,
       description: 'Independent lifestyle publication empowering women aged 18–30 to make smarter choices about beauty, style, money, and digital life.',
     },
   ];
@@ -187,7 +187,7 @@ export function getArticleStructuredData({
         url: 'https://thesmartgirledit.com',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://thesmartgirledit.com/src/assets/images/smart_girl_hero_cover_1791477860935.jpg',
+          url: 'https://thesmartgirledit.com/assets/images/smart_girl_hero_cover_1791477860935.jpg',
         },
       },
       articleSection: category,

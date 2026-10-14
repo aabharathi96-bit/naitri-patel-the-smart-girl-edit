@@ -20,11 +20,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 2, 2026',
     readingTime: '6 min read',
-    heroImage: '/src/assets/images/beauty_skincare_edit_1791476658980.jpg',
+    heroImage: '/assets/images/beauty_skincare_edit_1791476658980.jpg',
     heroImageAlt: 'Minimalist bathroom vanity with glass serum dropper, barrier repair cream, and morning sunlight',
     supportingImages: [
       {
-        src: '/src/assets/images/skincare_morning_ritual_1791482897659.jpg',
+        src: '/assets/images/skincare_morning_ritual_1791482897659.jpg',
         alt: 'Warm morning sunlight over a minimalist bathroom vanity with botanical hydration dropper, barrier cream, and waffle cotton towel',
         caption: 'A clutter-free vanity reflects a calmer morning and a resilient lipid barrier.',
       },
@@ -32,7 +32,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Barrier Repair vs Product Overload: The Clinical Perspective',
-    videoThumbnail: '/src/assets/images/beauty_skincare_edit_1791476658980.jpg',
+    videoThumbnail: '/assets/images/beauty_skincare_edit_1791476658980.jpg',
     introduction: [
       'If your bathroom counter currently looks like a chemistry laboratory, you are not alone. Most women in their twenties haven’t bought skincare out of medical necessity; they’ve bought it out of algorithm-induced panic after watching someone with professional studio ring lights glide glass-dropper bottles over preternaturally smooth skin.',
       'The result is rarely the advertised "glass skin." More often, it is stinging when applying basic moisturizer, persistent redness around the nose, and tiny mystery bumps along the forehead. That is not stubborn acne—that is an inflamed, compromised skin barrier begging for a break.',
@@ -186,11 +186,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 6, 2026',
     readingTime: '5 min read',
-    heroImage: '/src/assets/images/viral_beauty_product_test_1791479576896.jpg',
+    heroImage: '/assets/images/viral_beauty_product_test_1791479576896.jpg',
     heroImageAlt: 'Editorial flat lay of cosmetic swatches, mobile phone showing product reviews, and cappuccino on cafe table',
     supportingImages: [
       {
-        src: '/src/assets/images/cosmetic_swatch_texture_1791483174660.jpg',
+        src: '/assets/images/cosmetic_swatch_texture_1791483174660.jpg',
         alt: 'Hydrating cosmetic golden drops and luxury glass jars with brass lids under morning window light',
         caption: 'Packaging aesthetics are engineered to drive checkout clicks; formulation determines whether your skin thrives.',
       },
@@ -198,7 +198,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Deconstructing Viral Beauty Claims: Ingredients vs Studio Lighting',
-    videoThumbnail: '/src/assets/images/viral_beauty_product_test_1791479576896.jpg',
+    videoThumbnail: '/assets/images/viral_beauty_product_test_1791479576896.jpg',
     introduction: [
       'You are lying in bed at 11:15 PM scrolling through short video clips. A creator with glowing cheeks taps a frosted glass tube against the microphone, swipes a sheer pink gloss across her lips, and looks into the lens with wide eyes: "Guys. I am not kidding. This changed my life. You need this immediately."',
       'Your thumb hovers over the bottom-left yellow shopping bag icon. Your brain tells you that for $28, you can feel as dewy, serene, and put-together as that woman on your screen. But before Apple Pay dings, let’s talk about what is actually inside that bottle.',
@@ -344,11 +344,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 3, 2026',
     readingTime: '6 min read',
-    heroImage: '/src/assets/images/style_capsule_wardrobe_1791476672602.jpg',
+    heroImage: '/assets/images/style_capsule_wardrobe_1791476672602.jpg',
     heroImageAlt: 'Curated wooden capsule wardrobe rack with neutral wool coat, poplin shirt, and tailored espresso trousers',
     supportingImages: [
       {
-        src: '/src/assets/images/style_moodboard_outfit_1791482915335.jpg',
+        src: '/assets/images/style_moodboard_outfit_1791482915335.jpg',
         alt: 'Editorial flatlay of personal style essentials: tailored wool coat, ivory silk shirt, leather belt, minimalist watch, and fabric swatches',
         caption: 'Great personal style works around your actual movement, not a fantasy life.',
       },
@@ -356,7 +356,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Wardrobe Audit & High-Mileage Outfit Formulas',
-    videoThumbnail: '/src/assets/images/style_capsule_wardrobe_1791476672602.jpg',
+    videoThumbnail: '/assets/images/style_capsule_wardrobe_1791476672602.jpg',
     introduction: [
       'You open your closet doors on a Thursday morning at 8:15 AM. The rail is jammed so tightly that hangers creak against each other. You have sixty-two tops, nine pairs of pants, four dresses with tags still attached, and yet you stand in your towel feeling that familiar sensation of quiet dread: "I have literally nothing to wear."',
       'You do not have a clothing shortage. You have a coordination deficit. You have a closet assembled through isolated, emotional impulse purchases rather than a coherent system built for how you actually live your life.',
@@ -507,11 +507,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'September 24, 2026',
     readingTime: '5 min read',
-    heroImage: '/src/assets/images/style_trench_mirror_1791483223224.jpg',
+    heroImage: '/assets/images/style_trench_mirror_1791483223224.jpg',
     heroImageAlt: 'Young woman in tailored classic camel trench coat adjusting belt in front of a gilded standing mirror in sunlit room',
     supportingImages: [
       {
-        src: '/src/assets/images/personal_style_mirror_outfit_1791479590134.jpg',
+        src: '/assets/images/personal_style_mirror_outfit_1791479590134.jpg',
         alt: 'Young woman testing outfit proportions and tailored blazer silhouette in full-length mirror',
         caption: 'Signature style is cultivated through repetition, not frantic weekly novelty.',
       },
@@ -519,7 +519,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Developing a Signature Style: Visual Audits & Moodboards',
-    videoThumbnail: '/src/assets/images/personal_style_mirror_outfit_1791479590134.jpg',
+    videoThumbnail: '/assets/images/personal_style_mirror_outfit_1791479590134.jpg',
     introduction: [
       'Last month it was "Office Siren." The month before that it was "Clean Girl." Before that it was "Coquette," "Mob Wife," and "Tomato Girl." If you feel dizzy trying to keep up with what you are supposed to look like, congratulations: you are a human being with a life outside social algorithms.',
       'The purpose of fashion is not to become an unpaid extra in someone else’s weekly aesthetic moodboard. Personal style is the quiet art of knowing what feels like home on your body—and having the discernment to leave the rest on the rack.',
@@ -648,11 +648,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 1, 2026',
     readingTime: '7 min read',
-    heroImage: '/src/assets/images/money_journal_cards_1791476683295.jpg',
+    heroImage: '/assets/images/money_journal_cards_1791476683295.jpg',
     heroImageAlt: 'Leather card wallet, fountain pen, open paper journal with financial notes, and ceramic tea cup on wooden desk',
     supportingImages: [
       {
-        src: '/src/assets/images/money_coffee_budgeting_1791482938297.jpg',
+        src: '/assets/images/money_coffee_budgeting_1791482938297.jpg',
         alt: 'Young woman organized café desk setup with leather notebook, budget planning notes, iced latte, and modern laptop',
         caption: 'Knowing where your money goes at the end of the month should never require detective work.',
       },
@@ -660,7 +660,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Automating Your Money in Your 20s: The 3-Account Strategy',
-    videoThumbnail: '/src/assets/images/money_journal_cards_1791476683295.jpg',
+    videoThumbnail: '/assets/images/money_journal_cards_1791476683295.jpg',
     introduction: [
       'Let’s be honest: most financial advice aimed at twenty-somethings reads like it was written by an accountant who has never enjoyed a dinner with friends or bought a quality pair of boots in their life. You are told that if you just stop buying iced lattes, you will magically own a home by thirty.',
       'That math is insulting. Cutting out small daily joys does not build wealth; building automated pipelines that direct money toward emergency buffers, index funds, and guilt-free spending does. You can have great taste and still be financially bulletproof.',
@@ -795,11 +795,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 5, 2026',
     readingTime: '5 min read',
-    heroImage: '/src/assets/images/impulse_shopping_cart_hold_1791479602031.jpg',
+    heroImage: '/assets/images/impulse_shopping_cart_hold_1791479602031.jpg',
     heroImageAlt: 'Smartphone displaying an open e-commerce shopping cart resting beside a leather shoulder bag and coffee cup',
     supportingImages: [
       {
-        src: '/src/assets/images/mindful_shopping_pause_1791482971670.jpg',
+        src: '/assets/images/mindful_shopping_pause_1791482971670.jpg',
         alt: 'Young woman in minimalist boutique pausing thoughtfully while holding a single tailored neutral linen blazer',
         caption: 'The dopamine spike happens during anticipation, not package delivery.',
       },
@@ -807,7 +807,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Consumer Psychology & The 24-Hour Shopping Pause',
-    videoThumbnail: '/src/assets/images/impulse_shopping_cart_hold_1791479602031.jpg',
+    videoThumbnail: '/assets/images/impulse_shopping_cart_hold_1791479602031.jpg',
     introduction: [
       'Shopping is fun. Discovering a tailored wool jacket, smelling an artisanal perfume, or picking out a beautiful ceramic mug brings genuine aesthetic joy into our daily lives. We are not going to pretend otherwise.',
       'The problem is not shopping; the problem is compulsive, unconscious purchasing when we are bored, lonely, or scrolling our phones in bed. When checkout becomes a reflexive emotional band-aid, your bank account drains without delivering any real happiness.',
@@ -929,11 +929,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 4, 2026',
     readingTime: '6 min read',
-    heroImage: '/src/assets/images/trending_social_shopping_1791476631899.jpg',
+    heroImage: '/assets/images/trending_social_shopping_1791476631899.jpg',
     heroImageAlt: 'Stylish young woman in a tailored camel coat checking her phone outside a sunlit Paris cafe',
     supportingImages: [
       {
-        src: '/src/assets/images/digital_scrolling_awareness_1791483012649.jpg',
+        src: '/assets/images/digital_scrolling_awareness_1791483012649.jpg',
         alt: 'Editorial flatlay of smartphone on marble café table next to iced matcha latte, stylish sunglasses, and small leather cardholder',
         caption: 'Reclaiming friction in digital checkouts restores financial control.',
       },
@@ -941,7 +941,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Deconstructing the 3-Second Viral Hook and Parasocial Trust',
-    videoThumbnail: '/src/assets/images/trending_social_shopping_1791476631899.jpg',
+    videoThumbnail: '/assets/images/trending_social_shopping_1791476631899.jpg',
     isCreatorCorner: true,
     creatorCornerSnippet: {
       quote: 'When an influencer says "I’m genuinely obsessed and you need this immediately," remember their affiliate commission is activated before their video finishes rendering.',
@@ -1074,11 +1074,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'October 3, 2026',
     readingTime: '6 min read',
-    heroImage: '/src/assets/images/student_ai_laptop_desk_1791479623202.jpg',
+    heroImage: '/assets/images/student_ai_laptop_desk_1791479623202.jpg',
     heroImageAlt: 'College student working on laptop with textbooks, highlighter notes, and matcha latte in sunlit campus library',
     supportingImages: [
       {
-        src: '/src/assets/images/ai_study_library_desk_1791483046694.jpg',
+        src: '/assets/images/ai_study_library_desk_1791483046694.jpg',
         alt: 'Sunlit university library study desk with spiral notebook, sleek tablet, pastel highlighters, and ceramic mug',
         caption: 'Using modern AI as an active intellectual coach rather than a lazy shortcut.',
       },
@@ -1086,7 +1086,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Ethical AI Workflows for College Research and Study Guides',
-    videoThumbnail: '/src/assets/images/student_ai_laptop_desk_1791479623202.jpg',
+    videoThumbnail: '/assets/images/student_ai_laptop_desk_1791479623202.jpg',
     introduction: [
       'There are two wrong ways to approach artificial intelligence in college right now. The first is running from it out of fear that it is cheating. The second is using it as an automated essay dispenser that dulls your own brain.',
       'The sweet spot—where the smartest young women are quietly dominating—is using generative AI as an indefatigable intellectual spar-partner, research summarizer, and career coach. Think of it as a copilot, not a copy-paste machine.',
@@ -1208,11 +1208,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'September 30, 2026',
     readingTime: '6 min read',
-    heroImage: '/src/assets/images/online_shopping_fabric_inspection_1791479636113.jpg',
+    heroImage: '/assets/images/online_shopping_fabric_inspection_1791479636113.jpg',
     heroImageAlt: 'Young woman carefully inspecting woven linen fabric texture and seam quality under direct window light',
     supportingImages: [
       {
-        src: '/src/assets/images/garment_craft_quality_1791483089454.jpg',
+        src: '/assets/images/garment_craft_quality_1791483089454.jpg',
         alt: 'Editorial close-up of hands examining fine oatmeal cashmere knit sweater stitching in natural daylight',
         caption: 'Invest ninety seconds in verification to prevent weeks of return frustration.',
       },
@@ -1220,7 +1220,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'Evaluating Online Reviews & Spotting Dropshipped Listings',
-    videoThumbnail: '/src/assets/images/online_shopping_fabric_inspection_1791479636113.jpg',
+    videoThumbnail: '/assets/images/online_shopping_fabric_inspection_1791479636113.jpg',
     introduction: [
       'We have all been there: an aesthetic online store sells an ivory knit cardigan with horn buttons for $68. The images look like a spread from Vogue Scandinavia. The description promises "artisan hand-feel."'
       + ' Three weeks later, a plastic envelope arrives from an overseas cargo warehouse containing a flimsy acrylic sweater that smells like petroleum and has loose threads unraveling at the wrist.',
@@ -1342,11 +1342,11 @@ export const ARTICLES: Article[] = [
     },
     publicationDate: 'September 28, 2026',
     readingTime: '5 min read',
-    heroImage: '/src/assets/images/self_care_peaceful_bedroom_1791479647935.jpg',
+    heroImage: '/assets/images/self_care_peaceful_bedroom_1791479647935.jpg',
     heroImageAlt: 'Young woman in comfortable pajamas relaxing in sunlit linen bed reading a hardcover book with morning tea',
     supportingImages: [
       {
-        src: '/src/assets/images/money_journal_cards_1791476683295.jpg',
+        src: '/assets/images/money_journal_cards_1791476683295.jpg',
         alt: 'Calm bedside table with ceramic teacup, hardcover journal, and amber glass reading candle',
         caption: 'Real self-care is building a life you do not constantly need to escape from.',
       },
@@ -1354,7 +1354,7 @@ export const ARTICLES: Article[] = [
     videoStatus: 'verified',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoTitle: 'De-influencing Wellness: Sustainable Self-Care Habits',
-    videoThumbnail: '/src/assets/images/self_care_peaceful_bedroom_1791479647935.jpg',
+    videoThumbnail: '/assets/images/self_care_peaceful_bedroom_1791479647935.jpg',
     introduction: [
       'Somewhere along the way, self-care turned into another exhausting to-do list. You are told that to properly recover from a hard week, you must wake up at 5:00 AM, drink a lukewarm celery concoction, meditate for forty minutes, write in three distinct gratitude journals, and do an infrared sauna blanket session.',
       'If your self-care routine leaves you feeling more inadequate and depleted than before you started, it isn’t self-care—it is wellness consumerism disguised as virtue. True restoration is often completely unglamorous.',
